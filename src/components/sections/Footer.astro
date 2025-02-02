@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+const currentYear = new Date().getFullYear();
 ---
 
 <section class="py-10 mt-4">
@@ -7,7 +8,7 @@ import { Icon } from "astro-icon/components";
         <div class="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
             <div class="xl:flex xl:items-center xl:justify-start">
                 <p class="mt-5 text-sm xl:ml-6 xl:mt-0">
-                    © 2025 Gabriel Prando. All Rights Reserved.
+                    © {currentYear} Gabriel Prando. All Rights Reserved.
                 </p>
             </div>
 
@@ -16,6 +17,11 @@ import { Icon } from "astro-icon/components";
                     <li>
                         <a href="/" title="About" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
                             About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/talks" title="About" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
+                            Talks
                         </a>
                     </li>
                     <li>
