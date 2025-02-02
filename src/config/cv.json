@@ -9,32 +9,37 @@
         {
             "title": "Senior Software Engineer",
             "sub_title": "iFood",
+            "link": "https://institucional.ifood.com.br/en/",
             "years": "2024 - Present",
             "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
         },
         {
             "title": "Senior Software Engineer",
             "sub_title": "Conta Simples",
+            "link": "https://www.contasimples.com/",
             "years": "2021 - 2024",
             "details": "Worked in the financial sector, building and maintaining a serverless ecosystem on AWS. Developed internal tools, SDKs, and CI/CD pipelines, optimizing deployments with GitHub Actions. Gained deep experience with AWS Lambda, event-driven architectures, and observability solutions to improve system reliability and performance."
         },
         {
             "title": "Software Engineer",
             "sub_title": "Bonaparte",
+            "link": "https://www.bonaparte.ag/",
             "years": "2020 - 2021",
-            "details": "Worked in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
+            "details": "Worked on a client in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
         }
     ],
     "education": [
         {
             "title": "Bachelor's Degree in Computer Engineering",
             "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+            "link": "https://www.utfpr.edu.br/cursos/coordenacoes/graduacao/pato-branco/pb-engenharia-de-computacao",
             "years": "2018 - 2023",
             "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
         },
         {
             "title": "Master's Degree in Electrical and Computer Engineering",
             "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+            "link": "https://www.ppgeec-pb.com.br/",
             "years": "2023 - Present",
             "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
         }

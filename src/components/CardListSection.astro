@@ -4,6 +4,7 @@ import CardListItem from './CardListItem.astro';
 interface Item {
   title: string;
   sub_title: string;
+  link: string;
   years: string;
   details?: string;
 }
@@ -22,6 +23,7 @@ const { title, items } = Astro.props;
         <CardListItem
           title={item.title}
           sub_title={item.sub_title}
+          link={item.link}
           years={item.years}
           details={item?.details}
         />
