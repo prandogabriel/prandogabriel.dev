@@ -32,18 +32,18 @@
     ],
     "education": [
         {
-            "title": "Bachelor's Degree in Computer Engineering",
-            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
-            "link": "https://www.utfpr.edu.br/cursos/coordenacoes/graduacao/pato-branco/pb-engenharia-de-computacao",
-            "years": "2018 - 2023",
-            "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
-        },
-        {
             "title": "Master's Degree in Electrical and Computer Engineering",
             "sub_title": "Federal University of Technology – Paraná (UTFPR)",
             "link": "https://www.ppgeec-pb.com.br/",
             "years": "2023 - Present",
             "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
+        },
+        {
+            "title": "Bachelor's Degree in Computer Engineering",
+            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+            "link": "https://www.utfpr.edu.br/cursos/coordenacoes/graduacao/pato-branco/pb-engenharia-de-computacao",
+            "years": "2018 - 2023",
+            "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
         }
     ],
     "talks": [
