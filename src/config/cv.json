@@ -1,42 +1,42 @@
 {
     "basic": {
-        "name": "Paul Smith",
-        "job": "Software Engineer",
-        "summary": "Transforming challenges into opportunities with cutting-edge technology. Driven by a love for elegant, robust code.",
-        "cv_file_name": "paul_cv.pdf"
+        "name": "Gabriel Prando",
+        "job": "Senior Software Engineer",
+        "summary": "Building scalable, resilient distributed systems with a focus on serverless, containerized architectures, CI/CD optimization, and observability. Constantly improving developer experience and system reliability.",
+        "cv_file_name": "prando_cv.pdf"
     },
     "experiences": [
         {
             "title": "Senior Software Engineer",
-            "sub_title": "Tech Solutions Inc.",
-            "years": "2021 - Present",
-            "details": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
+            "sub_title": "iFood",
+            "years": "2024 - Present",
+            "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
+        },
+        {
+            "title": "Senior Software Engineer",
+            "sub_title": "Conta Simples",
+            "years": "2021 - 2024",
+            "details": "Worked in the financial sector, building and maintaining a serverless ecosystem on AWS. Developed internal tools, SDKs, and CI/CD pipelines, optimizing deployments with GitHub Actions. Gained deep experience with AWS Lambda, event-driven architectures, and observability solutions to improve system reliability and performance."
         },
         {
             "title": "Software Engineer",
-            "sub_title": "Innovate Labs",
-            "years": "2018 - 2021",
-            "details": "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
-        },
-        {
-            "title": "Junior Developer",
-            "sub_title": "Creative Apps Studio",
-            "years": "2015 - 2018",
-            "details": "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
+            "sub_title": "Bonaparte",
+            "years": "2020 - 2021",
+            "details": "Worked in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
         }
     ],
     "education": [
         {
-            "title": "Bachelor of Science in Computer Science",
-            "sub_title": "University of Modern Tech",
-            "years": "2015 - 2019",
-            "details": "Graduated with honors. Specialized in software development, data structures, and algorithms. Worked on various open-source projects and completed internships in tech companies."
+            "title": "Bachelor's Degree in Computer Engineering",
+            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+            "years": "2018 - 2023",
+            "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
         },
         {
-            "title": "Master of Science in Software Engineering",
-            "sub_title": "Global Tech Institute",
-            "years": "2019 - 2021",
-            "details": "Focused on advanced algorithms, cloud computing, and full-stack development. Published research papers on scalable microservices architecture."
+            "title": "Master's Degree in Electrical and Computer Engineering",
+            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+            "years": "2023 - Present",
+            "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
         }
     ],
     "projects": [
