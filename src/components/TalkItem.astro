@@ -1,0 +1,31 @@
+---
+const { title, event, date, link, language = "pt-br" } = Astro.props;
+
+const maxTitleLength = 100;
+const truncatedTitle = title.length > maxTitleLength ? title.substring(0, maxTitleLength) + "..." : title;
+---
+
+<a href={link} target="_blank" rel="noopener noreferrer">
+  <div class="relative w-full h-72 bg-cover bg-center rounded-lg shadow-lg overflow-hidden flex flex-col"
+       style={`background-image: url('/src/assets/talk-bg.png');`}>
+    
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
+
+    <span class="absolute top-3 left-3 bg-gray-900/80 text-white text-xs font-semibold uppercase px-3 py-1 rounded z-10">
+      {language}
+    </span>
+
+    <div class="relative p-6 flex-grow flex flex-col justify-center text-center z-10">
+      <h2 class="text-lg font-bold text-white">{truncatedTitle}</h2>
+      <p class="mt-2 text-gray-300">{event}</p>
+      <p class="text-sm text-gray-400">{date}</p>
+    </div>
+
+    <div class="relative pb-4 text-center z-10">
+      <span class="inline-block px-4 py-2 text-sm font-medium text-white uppercase 
+                   bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition">
+        View Content →
+      </span>
+    </div>
+  </div>
+</a>
