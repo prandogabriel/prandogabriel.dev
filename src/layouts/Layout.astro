@@ -1,25 +1,48 @@
 ---
-import Header from "../components/sections/Header.astro";
 import Footer from "../components/sections/Footer.astro";
+import Header from "../components/sections/Header.astro";
 
 import "../styles/index.css";
 
 interface Props {
-  title: string;
+	title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const d = "Computer Engineer with 5 years of experience as a Backend Engineer and Platform Engineer, focused on distributed systems, developer experience and devTools. Currently pursuing a Master's in Electrical and Computer Engineering at UTFPR. Visit to learn more about my journey, projects, and technical content!";
+
+const { title, description = d } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="h-full" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Gabriel Prando personal site" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.prandogabriel.dev/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/favicon.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.prandogabriel.dev/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="/favicon.png" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
+
 
     <!-- initialize theme -->
     <script is:inline>
