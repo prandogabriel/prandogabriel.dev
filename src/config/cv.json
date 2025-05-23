@@ -10,9 +10,16 @@
     "experiences": [
         {
             "title": "Senior Software Engineer",
+            "sub_title": "Kojo",
+            "link": "https://www.usekojo.com/",
+            "years": "2025 - Present",
+            "details": "Working at Kojo, a leader in construction material management software, as part of the Enterprise team. My role involves implementing features for high-tier enterprise clients, utilizing Node.js, React, GraphQL, and containerization technologies."
+        },
+        {
+            "title": "Senior Software Engineer",
             "sub_title": "iFood",
             "link": "https://institucional.ifood.com.br/en/",
-            "years": "2024 - Present",
+            "years": "2024 - 2025",
             "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
         },
         {
