@@ -19,4 +19,7 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    envPrefix: ['TELEGRAM_'],
+  },
 });
