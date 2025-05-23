@@ -1,0 +1,79 @@
+---
+// src/components/PdfViewModal.astro
+export interface Props {
+  cvFileName: string;
+}
+
+const { cvFileName } = Astro.props;
+const pdfUrl = `/cv/${cvFileName}`;
+---
+
+<div id="pdf-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 p-4" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="relative w-full max-w-4xl max-h-[90vh] bg-background rounded-lg shadow-xl overflow-hidden flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-border">
+      <h2 id="modal-title" class="text-xl font-semibold text-text-primary">Resume Preview</h2>
+      <button id="close-pdf-modal-btn" type="button" class="text-text-secondary hover:text-text-primary transition-colors" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-grow p-1 overflow-y-auto">
+      <iframe src={pdfUrl} title="Resume PDF" class="w-full h-[calc(90vh-100px)] border-0"></iframe>
+    </div>
+    <div class="flex justify-end p-4 border-t border-border">
+      <a
+        href={pdfUrl}
+        download={cvFileName}
+        class="inline-flex items-center justify-center px-4 py-2 text-sm text-white
+               font-medium transition-all duration-200 rounded
+               bg-primary hover:bg-secondary focus:bg-secondary"
+      >
+        Download PDF
+      </a>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ modalId: 'pdf-modal', closeBtnId: 'close-pdf-modal-btn' }}>
+  const modal = document.getElementById(modalId);
+  const closeButton = document.getElementById(closeBtnId);
+
+  function openModal() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = ''; // Restore background scrolling
+    }
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+  }
+
+  // Close modal if backdrop is clicked
+  if (modal) {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Listen for a custom event to open the modal
+  document.addEventListener('open-pdf-modal-event', openModal);
+
+  // Optional: Close modal with Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
