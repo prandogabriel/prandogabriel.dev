@@ -59,84 +59,84 @@
             "event": "Serverless Days SP 2024 - São Paulo",
             "date": "2024-10",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talks/blob/main/assets/serverless-observability/talk-building-observability-layer.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talks/main/assets/serverless-observability/talk-building-observability-layer.pdf"
         },
         {
             "title": "Desmistificando WebSockets com AWS Lambda e API Gateway",
             "event": "Recrutatech 2024 - Curitiba",
             "date": "2024-10",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-websocket-with-lambda-and-api-gw/blob/main/talk-websocket-with-lambda.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-websocket-with-lambda-and-api-gw/main/talk-websocket-with-lambda.pdf"
         },
         {
             "title": "Desenvolvendo Soluções com IA de forma rápida na GCP com Serverless",
             "event": "DevFest 2024 - Pato Branco",
             "date": "2024-09",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-gcp-serverless-with-ai/blob/main/ia-em-minutos-gcp-serverless.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-gcp-serverless-with-ai/main/ia-em-minutos-gcp-serverless.pdf"
         },
         {
             "title": "Evitando Lock-ins, Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
             "event": "DevOpsDays Curitiba 2024",
             "date": "2024-08",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-observability-building-it-yourself/blob/main/observability-building-it-yourself.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-observability-building-it-yourself/main/observability-building-it-yourself.pdf"
         },
         {
             "title": "Workshop - Introdução a Aplicações Serverless na AWS",
             "event": "Semana Acadêmica de Eng. Comp e ADS - UTFPR-PB",
             "date": "2024-06",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/workshop-serverless-aws/blob/main/intro-serverless-computing.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/workshop-serverless-aws/main/intro-serverless-computing.pdf"
         },
         {
             "title": "Performance e Escalabilidade em Bancos SQL",
             "event": "Internal company event",
             "date": "2023-08",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-postgres-performance/blob/main/talk-postgres-performance.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-postgres-performance/main/talk-postgres-performance.pdf"
         },
         {
             "title": "Introduction to MQTT",
             "event": "Internal company event",
             "date": "2022-11",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-introduction-to-mqtt/blob/master/talk-mqtt.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-introduction-to-mqtt/master/talk-mqtt.pdf"
         },
         {
             "title": "Serverless Computing",
             "event": "1ª OCCAM week",
             "date": "2022-07",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/talk-serverless/blob/master/O%20m%C3%ADnimo%20que%20voc%C3%AA%20precisa%20saber%20sobre%20serverless%20computing.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/talk-serverless/master/O%20m%C3%ADnimo%20que%20voc%C3%AA%20precisa%20saber%20sobre%20serverless%20computing.pdf"
         },
         {
             "title": "Performance de Sistema de Gerenciamento de Banco de Dados (SGBD)",
             "event": "Internal company event",
             "date": "2022-06",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/tech-talk-sgbd-performance/blob/master/tech-talk-otimiza%C3%A7%C3%A3o-postgres.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-sgbd-performance/master/tech-talk-otimiza%C3%A7%C3%A3o-postgres.pdf"
         },
         {
             "title": "AWS Step Functions",
             "event": "Internal company event",
             "date": "2022-01",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/tech-talk-aws-step-functions/blob/master/Tech_Talk_-_Maquinas_de_estado.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-aws-step-functions/master/Tech_Talk_-_Maquinas_de_estado.pdf"
         },
         {
             "title": "Elastic Stack",
             "event": "Internal company event",
             "date": "2021-11",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/tech-talk-elastic-stack/blob/master/tech-talk-elastic-stack.pptx.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-elastic-stack/master/tech-talk-elastic-stack.pptx.pdf"
         },
         {
             "title": "WebSockets e AWS API Gateway WebSocket",
             "event": "Internal company event",
             "date": "2021-08",
             "language": "pt-br",
-            "link": "https://github.com/prandogabriel/tech-talk-ws-and-aws-api-gateway-ws/blob/master/serverless-com-websocket.pptx.pdf"
+            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-ws-and-aws-api-gateway-ws/master/serverless-com-websocket.pptx.pdf"
         }
     ]
 }

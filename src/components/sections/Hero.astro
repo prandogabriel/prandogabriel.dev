@@ -78,7 +78,11 @@ import PdfViewModal from "../PdfViewModal.astro";
   </div>
 </div>
 
-<PdfViewModal cvFileName={basic.cv_file_name} />
+<PdfViewModal
+  title="Resume Preview"
+  pdfUrl={`/cv/${basic.cv_file_name}`}
+  fileName={basic.cv_file_name}
+/>
 
 </section>
 
@@ -88,8 +92,10 @@ import PdfViewModal from "../PdfViewModal.astro";
     
     if (viewResumeButton) {
       viewResumeButton.addEventListener('click', () => {
-        // Dispatch a custom event to open the modal
-        const event = new CustomEvent('open-pdf-modal-event');
+        // Dispatch a custom event to open the modal with the correct modalId
+        const event = new CustomEvent('open-pdf-modal-event', {
+          detail: { modalId: 'pdf-modal' }
+        });
         document.dispatchEvent(event);
       });
     } 

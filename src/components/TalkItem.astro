@@ -1,13 +1,20 @@
 ---
+import PdfViewModal from './PdfViewModal.astro';
+
 const { title, event, date, link, language = "pt-br" } = Astro.props;
 
 const maxTitleLength = 100;
 const truncatedTitle = title.length > maxTitleLength ? title.substring(0, maxTitleLength) + "..." : title;
+
+// Extract filename from link and create a unique modal ID
+const fileName = link.split('/').pop() || '';
+const modalId = `talk-modal-${fileName.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`;
 ---
 
-<a href={link} target="_blank" rel="noopener noreferrer">
-  <div class="relative w-full h-72 bg-cover bg-center rounded-lg shadow-lg overflow-hidden flex flex-col"
-       style={`background-image: url('/src/assets/talk-bg.png');`}>
+<div>
+  <div class="relative w-full h-72 bg-cover bg-center rounded-lg shadow-lg overflow-hidden flex flex-col cursor-pointer"
+       style={`background-image: url('/src/assets/talk-bg.png');`}
+       id={`talk-${fileName}`}>
     
     <div class="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
 
@@ -28,4 +35,24 @@ const truncatedTitle = title.length > maxTitleLength ? title.substring(0, maxTit
       </span>
     </div>
   </div>
-</a>
+
+  <PdfViewModal 
+    title={title}
+    pdfUrl={link}
+    fileName={fileName}
+    modalId={modalId}
+  />
+</div>
+
+<script define:vars={{ fileName, modalId }}>
+  const talkElement = document.getElementById(`talk-${fileName}`);
+  
+  if (talkElement) {
+    talkElement.addEventListener('click', () => {
+      const event = new CustomEvent('open-pdf-modal-event', {
+        detail: { modalId }
+      });
+      document.dispatchEvent(event);
+    });
+  }
+</script>
