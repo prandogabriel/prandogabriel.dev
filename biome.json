@@ -39,9 +39,7 @@
       "trailingCommas": "es5",
       "semicolons": "always"
     },
-    "globals": [
-      "Astro"
-    ]
+    "globals": ["Astro"]
   },
   "files": {
     "ignore": [

@@ -7,7 +7,7 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     // Get form data
     const formData = await request.formData();
-    
+
     // Extract values
     const name = formData.get('name')?.toString().trim() || '';
     const email = formData.get('email')?.toString().trim() || '';
@@ -20,14 +20,14 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({
           success: false,
           message: 'Missing required fields',
-          received: { name, email, subject, message }
+          received: { name, email, subject, message },
         }),
-        { 
+        {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-          }
+          },
         }
       );
     }
@@ -66,12 +66,12 @@ export const POST: APIRoute = async ({ request }) => {
           message: 'Failed to send message to Telegram',
           error: errorData,
         }),
-        { 
+        {
           status: telegramResponse.status,
           headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
-          }
+          },
         }
       );
     }
@@ -81,12 +81,12 @@ export const POST: APIRoute = async ({ request }) => {
         success: true,
         message: 'Message sent successfully',
       }),
-      { 
+      {
         status: 200,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
-        }
+        },
       }
     );
   } catch (error) {
@@ -97,13 +97,13 @@ export const POST: APIRoute = async ({ request }) => {
         message: 'Failed to send message',
         error: error instanceof Error ? error.message : 'Unknown error',
       }),
-      { 
+      {
         status: 500,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
-        }
+        },
       }
     );
   }
-}; 
+};

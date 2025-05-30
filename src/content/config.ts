@@ -12,5 +12,5 @@ const blogsCollection = defineCollection({
 });
 
 export const collections = {
-  'blogs': blogsCollection,
+  blogs: blogsCollection,
 };
