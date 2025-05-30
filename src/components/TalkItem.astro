@@ -1,11 +1,12 @@
 ---
 import PdfViewModal from './PdfViewModal.astro';
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
-const { title, event, date, link, language = "pt-br" } = Astro.props;
+const { title, event, date, link, language = 'pt-br' } = Astro.props;
 
 const maxTitleLength = 100;
-const truncatedTitle = title.length > maxTitleLength ? title.substring(0, maxTitleLength) + "..." : title;
+const truncatedTitle =
+  title.length > maxTitleLength ? title.substring(0, maxTitleLength) + '...' : title;
 
 // Extract filename from link and create a unique modal ID
 const fileName = link.split('/').pop() || '';
@@ -15,7 +16,7 @@ const modalId = `talk-modal-${fileName.replace(/[^a-z0-9]/gi, '-').toLowerCase()
 const formattedDate = new Date(date).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
-  day: 'numeric'
+  day: 'numeric',
 });
 ---
 

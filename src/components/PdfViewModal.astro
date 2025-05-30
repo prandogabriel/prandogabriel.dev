@@ -9,7 +9,9 @@ export interface Props {
 
 const { title, pdfUrl, fileName, modalId = 'pdf-modal' } = Astro.props;
 const isLocalFile = pdfUrl.startsWith('/');
-const viewerUrl = isLocalFile ? pdfUrl : `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+const viewerUrl = isLocalFile
+  ? pdfUrl
+  : `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
 ---
 
 <div id={modalId} class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 p-4" aria-labelledby={`${modalId}-title`} role="dialog" aria-modal="true">

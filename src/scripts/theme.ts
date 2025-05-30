@@ -1,13 +1,13 @@
-const themes = ["dark", "light"];
+const themes = ['dark', 'light'];
 const [dark] = themes;
 
 const getCurrentTheme = () => document.documentElement.dataset.theme;
 
-const IFRAME_SELECTOR = "iframe.giscus-frame";
-const SOURCE_GISCUS_DOMAIN = "https://giscus.app";
+const IFRAME_SELECTOR = 'iframe.giscus-frame';
+const SOURCE_GISCUS_DOMAIN = 'https://giscus.app';
 
-window.addEventListener("load", function () {
-  const themeSaved = localStorage.getItem("theme");
+window.addEventListener('load', function () {
+  const themeSaved = localStorage.getItem('theme');
 
   sendThemeMessage(themeSaved);
 });
@@ -32,18 +32,14 @@ export const getNextTheme = () => {
 
 export const updateToggleThemeIcon = () => {
   const currentTheme = getCurrentTheme();
-  document
-    .querySelector(`#icon-theme-${currentTheme}`)
-    ?.classList.add("hidden");
+  document.querySelector(`#icon-theme-${currentTheme}`)?.classList.add('hidden');
 
   const themeNext = getNextTheme();
-  document
-    .querySelector(`#icon-theme-${themeNext}`)
-    ?.classList.remove("hidden");
+  document.querySelector(`#icon-theme-${themeNext}`)?.classList.remove('hidden');
 };
 
 export const toggleMarkdownTheme = (newTheme: string) => {
-  const contentElement = document.getElementById("markdown");
+  const contentElement = document.getElementById('markdown');
 
   if (!contentElement) {
     return;
@@ -52,8 +48,8 @@ export const toggleMarkdownTheme = (newTheme: string) => {
   sendThemeMessage(newTheme);
 
   if (newTheme === dark) {
-    contentElement.classList.add("prose-invert");
+    contentElement.classList.add('prose-invert');
   } else {
-    contentElement.classList.remove("prose-invert");
+    contentElement.classList.remove('prose-invert');
   }
 };

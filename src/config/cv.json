@@ -1,144 +1,144 @@
 {
-    "basic": {
-        "name": "Gabriel Prando",
-        "job": "Senior Software Engineer",
-        "summary": "Building scalable, resilient distributed systems with a focus on serverless, containerized architectures, CI/CD optimization, and observability. Constantly improving developer experience and system reliability.",
-        "cv_file_name": "prando_cv.pdf",
-        "linkedin": "https://www.linkedin.com/in/prandogabriel/",
-        "github": "https://github.com/prandogabriel",
-        "email": "gprando55@gmail.com",
-        "location": "Paraná, Brazil"
+  "basic": {
+    "name": "Gabriel Prando",
+    "job": "Senior Software Engineer",
+    "summary": "Building scalable, resilient distributed systems with a focus on serverless, containerized architectures, CI/CD optimization, and observability. Constantly improving developer experience and system reliability.",
+    "cv_file_name": "prando_cv.pdf",
+    "linkedin": "https://www.linkedin.com/in/prandogabriel/",
+    "github": "https://github.com/prandogabriel",
+    "email": "gprando55@gmail.com",
+    "location": "Paraná, Brazil"
+  },
+  "experiences": [
+    {
+      "title": "Senior Software Engineer",
+      "sub_title": "Kojo",
+      "link": "https://www.usekojo.com/",
+      "years": "2025 - Present",
+      "details": "Working at Kojo, a leader in construction material management software, as part of the Enterprise team. My role involves implementing features for high-tier enterprise clients, utilizing Node.js, React, GraphQL, and containerization technologies."
     },
-    "experiences": [
-        {
-            "title": "Senior Software Engineer",
-            "sub_title": "Kojo",
-            "link": "https://www.usekojo.com/",
-            "years": "2025 - Present",
-            "details": "Working at Kojo, a leader in construction material management software, as part of the Enterprise team. My role involves implementing features for high-tier enterprise clients, utilizing Node.js, React, GraphQL, and containerization technologies."
-        },
-        {
-            "title": "Senior Software Engineer",
-            "sub_title": "iFood",
-            "link": "https://institucional.ifood.com.br/en/",
-            "years": "2024 - 2025",
-            "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
-        },
-        {
-            "title": "Senior Software Engineer",
-            "sub_title": "Conta Simples",
-            "link": "https://www.contasimples.com/",
-            "years": "2021 - 2024",
-            "details": "Worked in the financial sector, building and maintaining a serverless ecosystem on AWS. Developed internal tools, SDKs, and CI/CD pipelines, optimizing deployments with GitHub Actions. Gained deep experience with AWS Lambda, event-driven architectures, and observability solutions to improve system reliability and performance."
-        },
-        {
-            "title": "Software Engineer",
-            "sub_title": "Bonaparte",
-            "link": "https://www.bonaparte.ag/",
-            "years": "2020 - 2021",
-            "details": "Worked on a client in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
-        }
-    ],
-    "education": [
-        {
-            "title": "Master's Degree in Electrical and Computer Engineering",
-            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
-            "link": "https://www.ppgeec-pb.com.br/",
-            "years": "2023 - Present",
-            "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
-        },
-        {
-            "title": "Bachelor's Degree in Computer Engineering",
-            "sub_title": "Federal University of Technology – Paraná (UTFPR)",
-            "link": "https://www.utfpr.edu.br/cursos/coordenacoes/graduacao/pato-branco/pb-engenharia-de-computacao",
-            "years": "2018 - 2023",
-            "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
-        }
-    ],
-    "talks": [
-        {
-            "title": "Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
-            "event": "Serverless Days SP 2024 - São Paulo",
-            "date": "2024-10",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talks/main/assets/serverless-observability/talk-building-observability-layer.pdf"
-        },
-        {
-            "title": "Desmistificando WebSockets com AWS Lambda e API Gateway",
-            "event": "Recrutatech 2024 - Curitiba",
-            "date": "2024-10",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-websocket-with-lambda-and-api-gw/main/talk-websocket-with-lambda.pdf"
-        },
-        {
-            "title": "Desenvolvendo Soluções com IA de forma rápida na GCP com Serverless",
-            "event": "DevFest 2024 - Pato Branco",
-            "date": "2024-09",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-gcp-serverless-with-ai/main/ia-em-minutos-gcp-serverless.pdf"
-        },
-        {
-            "title": "Evitando Lock-ins, Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
-            "event": "DevOpsDays Curitiba 2024",
-            "date": "2024-08",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-observability-building-it-yourself/main/observability-building-it-yourself.pdf"
-        },
-        {
-            "title": "Workshop - Introdução a Aplicações Serverless na AWS",
-            "event": "Semana Acadêmica de Eng. Comp e ADS - UTFPR-PB",
-            "date": "2024-06",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/workshop-serverless-aws/main/intro-serverless-computing.pdf"
-        },
-        {
-            "title": "Performance e Escalabilidade em Bancos SQL",
-            "event": "Internal company event",
-            "date": "2023-08",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-postgres-performance/main/talk-postgres-performance.pdf"
-        },
-        {
-            "title": "Introduction to MQTT",
-            "event": "Internal company event",
-            "date": "2022-11",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-introduction-to-mqtt/master/talk-mqtt.pdf"
-        },
-        {
-            "title": "Serverless Computing",
-            "event": "1ª OCCAM week",
-            "date": "2022-07",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/talk-serverless/master/O%20m%C3%ADnimo%20que%20voc%C3%AA%20precisa%20saber%20sobre%20serverless%20computing.pdf"
-        },
-        {
-            "title": "Performance de Sistema de Gerenciamento de Banco de Dados (SGBD)",
-            "event": "Internal company event",
-            "date": "2022-06",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-sgbd-performance/master/tech-talk-otimiza%C3%A7%C3%A3o-postgres.pdf"
-        },
-        {
-            "title": "AWS Step Functions",
-            "event": "Internal company event",
-            "date": "2022-01",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-aws-step-functions/master/Tech_Talk_-_Maquinas_de_estado.pdf"
-        },
-        {
-            "title": "Elastic Stack",
-            "event": "Internal company event",
-            "date": "2021-11",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-elastic-stack/master/tech-talk-elastic-stack.pptx.pdf"
-        },
-        {
-            "title": "WebSockets e AWS API Gateway WebSocket",
-            "event": "Internal company event",
-            "date": "2021-08",
-            "language": "pt-br",
-            "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-ws-and-aws-api-gateway-ws/master/serverless-com-websocket.pptx.pdf"
-        }
-    ]
+    {
+      "title": "Senior Software Engineer",
+      "sub_title": "iFood",
+      "link": "https://institucional.ifood.com.br/en/",
+      "years": "2024 - 2025",
+      "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
+    },
+    {
+      "title": "Senior Software Engineer",
+      "sub_title": "Conta Simples",
+      "link": "https://www.contasimples.com/",
+      "years": "2021 - 2024",
+      "details": "Worked in the financial sector, building and maintaining a serverless ecosystem on AWS. Developed internal tools, SDKs, and CI/CD pipelines, optimizing deployments with GitHub Actions. Gained deep experience with AWS Lambda, event-driven architectures, and observability solutions to improve system reliability and performance."
+    },
+    {
+      "title": "Software Engineer",
+      "sub_title": "Bonaparte",
+      "link": "https://www.bonaparte.ag/",
+      "years": "2020 - 2021",
+      "details": "Worked on a client in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
+    }
+  ],
+  "education": [
+    {
+      "title": "Master's Degree in Electrical and Computer Engineering",
+      "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+      "link": "https://www.ppgeec-pb.com.br/",
+      "years": "2023 - Present",
+      "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
+    },
+    {
+      "title": "Bachelor's Degree in Computer Engineering",
+      "sub_title": "Federal University of Technology – Paraná (UTFPR)",
+      "link": "https://www.utfpr.edu.br/cursos/coordenacoes/graduacao/pato-branco/pb-engenharia-de-computacao",
+      "years": "2018 - 2023",
+      "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
+    }
+  ],
+  "talks": [
+    {
+      "title": "Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "event": "Serverless Days SP 2024 - São Paulo",
+      "date": "2024-10",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talks/main/assets/serverless-observability/talk-building-observability-layer.pdf"
+    },
+    {
+      "title": "Desmistificando WebSockets com AWS Lambda e API Gateway",
+      "event": "Recrutatech 2024 - Curitiba",
+      "date": "2024-10",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-websocket-with-lambda-and-api-gw/main/talk-websocket-with-lambda.pdf"
+    },
+    {
+      "title": "Desenvolvendo Soluções com IA de forma rápida na GCP com Serverless",
+      "event": "DevFest 2024 - Pato Branco",
+      "date": "2024-09",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-gcp-serverless-with-ai/main/ia-em-minutos-gcp-serverless.pdf"
+    },
+    {
+      "title": "Evitando Lock-ins, Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "event": "DevOpsDays Curitiba 2024",
+      "date": "2024-08",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-observability-building-it-yourself/main/observability-building-it-yourself.pdf"
+    },
+    {
+      "title": "Workshop - Introdução a Aplicações Serverless na AWS",
+      "event": "Semana Acadêmica de Eng. Comp e ADS - UTFPR-PB",
+      "date": "2024-06",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/workshop-serverless-aws/main/intro-serverless-computing.pdf"
+    },
+    {
+      "title": "Performance e Escalabilidade em Bancos SQL",
+      "event": "Internal company event",
+      "date": "2023-08",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-postgres-performance/main/talk-postgres-performance.pdf"
+    },
+    {
+      "title": "Introduction to MQTT",
+      "event": "Internal company event",
+      "date": "2022-11",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-introduction-to-mqtt/master/talk-mqtt.pdf"
+    },
+    {
+      "title": "Serverless Computing",
+      "event": "1ª OCCAM week",
+      "date": "2022-07",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talk-serverless/master/O%20m%C3%ADnimo%20que%20voc%C3%AA%20precisa%20saber%20sobre%20serverless%20computing.pdf"
+    },
+    {
+      "title": "Performance de Sistema de Gerenciamento de Banco de Dados (SGBD)",
+      "event": "Internal company event",
+      "date": "2022-06",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-sgbd-performance/master/tech-talk-otimiza%C3%A7%C3%A3o-postgres.pdf"
+    },
+    {
+      "title": "AWS Step Functions",
+      "event": "Internal company event",
+      "date": "2022-01",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-aws-step-functions/master/Tech_Talk_-_Maquinas_de_estado.pdf"
+    },
+    {
+      "title": "Elastic Stack",
+      "event": "Internal company event",
+      "date": "2021-11",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-elastic-stack/master/tech-talk-elastic-stack.pptx.pdf"
+    },
+    {
+      "title": "WebSockets e AWS API Gateway WebSocket",
+      "event": "Internal company event",
+      "date": "2021-08",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/tech-talk-ws-and-aws-api-gateway-ws/master/serverless-com-websocket.pptx.pdf"
+    }
+  ]
 }

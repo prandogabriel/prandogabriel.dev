@@ -36,7 +36,7 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingComma": "es5",
+      "trailingCommas": "es5",
       "semicolons": "always"
     }
   },
@@ -49,7 +49,8 @@
       "*.config.js",
       "*.config.mjs",
       "*.config.ts",
-      "*.config.mts"
+      "*.config.mts",
+      "./.vercel"
     ]
   }
 }
