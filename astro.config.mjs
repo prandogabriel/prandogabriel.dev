@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 export default defineConfig({
   site: "https://www.prandogabriel.dev",
-  output: "server",
+  output: "hybrid",
   integrations: [
     tailwind(),
     icon(),
@@ -25,6 +25,5 @@ export default defineConfig({
   vite: {
     envPrefix: ['TELEGRAM_'],
   },
-
   adapter: vercel(),
 });
