@@ -1,27 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
-import type { CollectionEntry } from "astro:content";
-import type { Page } from "astro";
 import BlogList from '../../components/BlogList.astro';
 import Pagination from '../../components/Pagination.astro';
 import Layout from '../../layouts/Layout.astro';
 
-export async function getStaticPaths({ paginate }) {
-    const blogs = await getCollection("blogs");
+export const prerender = true;
 
-    return paginate(blogs, {
+export async function getStaticPaths({ paginate }) {
+    const blogs = await getCollection("blogs", ({ data }) => {
+        return !data.draft;
+    });
+
+    const sortedBlogs = blogs.sort((a, b) => 
+        new Date(b.data.datetime).getTime() - new Date(a.data.datetime).getTime()
+    );
+
+    return paginate(sortedBlogs, {
         pageSize: 5,
+        route: '/blogs/[...page]',
     });
 }
 
-export interface Props {
-  page: Page<CollectionEntry<"blogs">>;
-}
-
 const { page } = Astro.props;
+const { currentPage, lastPage, data: blogs } = page;
 ---
 
 <Layout title={`Blogs - Gabriel Prando`}>
-	<BlogList blogs={page?.data || []} />
-    <Pagination page={page} />
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8">Blog Posts</h1>
+        <BlogList blogs={blogs} />
+        <Pagination currentPage={currentPage} lastPage={lastPage} />
+    </main>
 </Layout>

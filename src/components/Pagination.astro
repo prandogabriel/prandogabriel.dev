@@ -2,14 +2,14 @@
 import type { Page } from "astro";
 
 interface Props {
-  page: Page<any>;
+  currentPage: number;
+  lastPage: number;
 }
 
-const { page } = Astro.props;
+const { currentPage, lastPage } = Astro.props;
 
-const hasPreviousPage = page.url.prev;
-const hasNextPage = page.url.next;
-const currentPage = page.currentPage;
+const hasPreviousPage = currentPage > 1;
+const hasNextPage = currentPage < lastPage;
 ---
 
 <nav aria-label="Blog pagination" class="flex justify-center items-center space-x-4 mt-8">

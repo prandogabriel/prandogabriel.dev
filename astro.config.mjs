@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 export default defineConfig({
   site: "https://www.prandogabriel.dev",
-  output: "hybrid",
+  output: "server",
   integrations: [
     tailwind(),
     icon(),
