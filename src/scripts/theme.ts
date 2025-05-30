@@ -6,7 +6,7 @@ const getCurrentTheme = () => document.documentElement.dataset.theme;
 const IFRAME_SELECTOR = 'iframe.giscus-frame';
 const SOURCE_GISCUS_DOMAIN = 'https://giscus.app';
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
   const themeSaved = localStorage.getItem('theme');
 
   sendThemeMessage(themeSaved);

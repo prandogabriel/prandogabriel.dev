@@ -6,7 +6,7 @@ const { title, event, date, link, language = 'pt-br' } = Astro.props;
 
 const maxTitleLength = 100;
 const truncatedTitle =
-  title.length > maxTitleLength ? title.substring(0, maxTitleLength) + '...' : title;
+  title.length > maxTitleLength ? `${title.substring(0, maxTitleLength)}...` : title;
 
 // Extract filename from link and create a unique modal ID
 const fileName = link.split('/').pop() || '';

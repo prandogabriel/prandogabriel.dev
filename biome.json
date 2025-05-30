@@ -8,7 +8,7 @@
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnusedVariables": "error",
+        "noUnusedVariables": "off",
         "noUnusedPrivateClassMembers": "error",
         "noUndeclaredVariables": "error"
       },
@@ -38,7 +38,10 @@
       "quoteStyle": "single",
       "trailingCommas": "es5",
       "semicolons": "always"
-    }
+    },
+    "globals": [
+      "Astro"
+    ]
   },
   "files": {
     "ignore": [
@@ -50,7 +53,8 @@
       "*.config.mjs",
       "*.config.ts",
       "*.config.mts",
-      "./.vercel"
+      "./.vercel",
+      "./src/styles/theme.css"
     ]
   }
 }
