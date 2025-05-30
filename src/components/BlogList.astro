@@ -9,8 +9,8 @@ interface Props {
 const { blogs } = Astro.props;
 ---
 
-<section class="space-y-8">
-  <ul class="space-y-6">
+<section class="max-w-3xl mx-auto">
+  <ul class="space-y-6 mb-16">
     {blogs.map((blog) => (
       <BlogItem blog={blog} />
     ))}
