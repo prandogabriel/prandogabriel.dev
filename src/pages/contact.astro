@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from "astro-icon/components";
+import cvConfig from '../config/cv.json';
+
+const { email, linkedin, github, location } = cvConfig.basic;
+---
+
+<Layout title="Contact - Gabriel Prando">
+  <main class="container mx-auto px-4 py-16">
+    <div class="max-w-6xl mx-auto">
+      {/* Header Section */}
+      <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold text-white mb-4">Get in Touch</h1>
+        <p class="text-gray-400 text-lg">Let's connect and discuss how we can work together</p>
+      </div>
+
+      {/* Main Content Grid */}
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Left Column - Contact Cards */}
+        <div class="space-y-6">
+          {/* Email Card */}
+          <div class="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-100 group-hover:opacity-80 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="bg-blue-500/20 p-3 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <Icon name="Mail" class="w-6 h-6 text-blue-400" />
+                </div>
+                <h2 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Email</h2>
+              </div>
+              <a href={`mailto:${email}`} class="text-gray-400 group-hover:text-gray-300 transition-colors truncate block">
+                {email}
+              </a>
+            </div>
+          </div>
+
+          {/* LinkedIn Card */}
+          <div class="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-100 group-hover:opacity-80 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="bg-blue-500/20 p-3 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <Icon name="Linkedin" class="w-6 h-6 text-blue-400" />
+                </div>
+                <h2 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">LinkedIn</h2>
+              </div>
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" class="text-gray-400 group-hover:text-gray-300 transition-colors truncate block">
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          {/* GitHub Card */}
+          <div class="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-100 group-hover:opacity-80 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="bg-blue-500/20 p-3 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <Icon name="Github" class="w-6 h-6 text-blue-400" />
+                </div>
+                <h2 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">GitHub</h2>
+              </div>
+              <a href={github} target="_blank" rel="noopener noreferrer" class="text-gray-400 group-hover:text-gray-300 transition-colors truncate block">
+                Check out my projects
+              </a>
+            </div>
+          </div>
+
+          {/* Location Card */}
+          <div class="group relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-6 shadow-lg overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-100 group-hover:opacity-80 transition-opacity"></div>
+            <div class="relative z-10">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="bg-blue-500/20 p-3 rounded-lg group-hover:bg-blue-500/30 transition-colors">
+                  <Icon name="MapPin" class="w-6 h-6 text-blue-400" />
+                </div>
+                <h2 class="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Location</h2>
+              </div>
+              <p class="text-gray-400 group-hover:text-gray-300 transition-colors truncate">{location}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column - Contact Form */}
+        <div class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-8 shadow-lg h-full pb-12">
+          <h2 class="text-2xl font-bold text-white mb-6">Send me a message</h2>
+          <form class="space-y-6" id="contact-form">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                       placeholder="Your name">
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                <input type="email" id="email" name="email" required
+                       class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                       placeholder="your.email@example.com">
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" required
+                     class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                     placeholder="What's this about?">
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                        placeholder="Your message here..."></textarea>
+            </div>
+            <div>
+              <button type="submit" 
+                      class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300">
+                Send Message
+              </button>
+            </div>
+            <div id="form-status" class="hidden text-center"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const formStatus = document.getElementById('form-status') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Show loading state
+      formStatus?.classList.remove('hidden', 'text-red-500', 'text-green-500');
+      formStatus?.classList.add('text-gray-400');
+      formStatus!.textContent = 'Sending message...';
+
+      // Get form data
+      const formData = new FormData(form);
+
+      // Send request
+      const response = await fetch('/api/send-message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData as any),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      if (result.success) {
+        formStatus?.classList.remove('text-gray-400');
+        formStatus?.classList.add('text-green-500');
+        formStatus!.textContent = 'Message sent successfully!';
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      formStatus?.classList.remove('text-gray-400');
+      formStatus?.classList.add('text-red-500');
+      formStatus!.textContent = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
+    }
+  });
+</script> 

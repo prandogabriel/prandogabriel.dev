@@ -1,61 +1,116 @@
 ---
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-
 import Layout from "../../layouts/Layout.astro";
 
-export const getStaticPaths = async () => {
-  const blogs = await getCollection("blogs");
-  const paths = blogs.map((blog) => {
-    return {
-      params: {
-        slug: blog.slug,
-      },
-      props: {
-        blog,
-      },
-    };
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const blogs = await getCollection("blogs", ({ data }) => {
+    return !data.draft;
   });
+  
+  return blogs.map((blog) => ({
+    params: { slug: blog.slug },
+    props: { blog },
+  }));
+}
 
-  return paths;
-};
-
-type Props = {
+interface Props {
   blog: CollectionEntry<"blogs">;
-};
+}
 
 const { blog } = Astro.props;
 const { Content } = await blog.render();
 ---
 
 <Layout title={blog.data.title}>
-  <section class="flex justify-center mt-12 px-4">
-    <div id="markdown" class="prose prose-lg overflow-visible relative mb-5">
-      <Content />
+  <main class="container mx-auto px-4 py-8">
+    <article class="prose prose-lg dark:prose-invert mx-auto">
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{blog.data.title}</h1>
+        <time datetime={blog.data.datetime} class="text-offset">
+          {new Date(blog.data.datetime).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+      </header>
+      
+      <div class="markdown-content">
+        <Content />
+      </div>
+    </article>
+
+    <div class="mt-16">
+      <script is:inline src="https://giscus.app/client.js"
+        data-repo="prandogabriel/prandogabriel.dev"
+        data-repo-id="R_kgDONzIuyw"
+        data-category="General"
+        data-category-id="DIC_kwDONzIuy84Cm8dN"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+      </script>
     </div>
-  </section>
-
-  <script>
-    import { toggleMarkdownTheme } from "../../scripts/theme";
-
-    const theme = localStorage.getItem("theme") || "dark";
-
-    toggleMarkdownTheme(theme);
-  </script>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="prandogabriel/prandogabriel.dev"
-    data-repo-id="R_kgDONzIuyw"
-    data-category="General"
-    data-category-id="DIC_kwDONzIuy84Cm8dN"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="dark"
-    data-lang="en"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async></script>
+  </main>
 </Layout>
+
+<style>
+  .markdown-content :global(h1),
+  .markdown-content :global(h2),
+  .markdown-content :global(h3),
+  .markdown-content :global(h4),
+  .markdown-content :global(h5),
+  .markdown-content :global(h6) {
+    color: var(--color-foreground);
+    font-weight: bold;
+  }
+
+  .markdown-content :global(p) {
+    color: var(--color-foreground-80);
+  }
+
+  .markdown-content :global(a) {
+    color: var(--color-primary);
+  }
+
+  .markdown-content :global(a:hover) {
+    color: var(--color-primary-80);
+  }
+
+  .markdown-content :global(strong) {
+    color: var(--color-foreground);
+  }
+
+  .markdown-content :global(code) {
+    color: var(--color-primary);
+  }
+
+  .markdown-content :global(pre) {
+    background-color: var(--color-offset);
+    color: var(--color-foreground);
+  }
+
+  .markdown-content :global(blockquote) {
+    border-left-color: var(--color-primary);
+    color: var(--color-foreground-80);
+  }
+
+  .markdown-content :global(img) {
+    border-radius: 0.5rem;
+  }
+
+  .markdown-content :global(ul),
+  .markdown-content :global(ol) {
+    color: var(--color-foreground-80);
+  }
+</style>

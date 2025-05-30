@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import heroImage from "../../assets/prando.png";
 import { basic } from "../../config/cv.json";
 import { Icon } from "astro-icon/components";
+import PdfViewModal from "../PdfViewModal.astro";
 ---
 
 <section class="py-5 px-4 sm:py-10 lg:py-16">
@@ -53,28 +54,50 @@ import { Icon } from "astro-icon/components";
           </a>
 
           <div class="relative group flex items-center">
-            <a
-              href={`/cv/${basic?.cv_file_name}`}
-              title="Download CV"
-              download
+            <button
+              id="view-resume-btn"
+              title="View Resume"
               class="inline-flex items-center justify-center px-6 py-3 text-base text-white
                                 font-semibold transition-all duration-200 rounded gap-2
                                 bg-primary hover:bg-secondary focus:bg-secondary"
               role="button"
             >
               <Icon name="Download" class="w-5 h-5" />
-            </a>
-
+            </button>
+            
             <span
-              class="absolute left-full ml-2 hidden group-hover:opacity-100
-                            transition-opacity duration-200 bg-gray-900 text-white text-xs rounded
-                            px-3 py-2 shadow-lg whitespace-nowrap"
+            class="absolute left-full ml-2 hidden group-hover:opacity-100
+            transition-opacity duration-200 bg-gray-900 text-white text-xs rounded
+            px-3 py-2 shadow-lg whitespace-nowrap"
             >
-              Download complete resumé
-            </span>
-          </div>
+            View Resume
+          </span>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<PdfViewModal
+  title="Resume Preview"
+  pdfUrl={`/cv/${basic.cv_file_name}`}
+  fileName={basic.cv_file_name}
+/>
+
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const viewResumeButton = document.getElementById('view-resume-btn');
+    
+    if (viewResumeButton) {
+      viewResumeButton.addEventListener('click', () => {
+        // Dispatch a custom event to open the modal with the correct modalId
+        const event = new CustomEvent('open-pdf-modal-event', {
+          detail: { modalId: 'pdf-modal' }
+        });
+        document.dispatchEvent(event);
+      });
+    } 
+  });
+</script>

@@ -1,0 +1,93 @@
+---
+// src/components/PdfViewModal.astro
+export interface Props {
+  title: string;
+  pdfUrl: string;
+  fileName: string;
+  modalId?: string;
+}
+
+const { title, pdfUrl, fileName, modalId = 'pdf-modal' } = Astro.props;
+const isLocalFile = pdfUrl.startsWith('/');
+const viewerUrl = isLocalFile ? pdfUrl : `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
+---
+
+<div id={modalId} class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 p-4" aria-labelledby={`${modalId}-title`} role="dialog" aria-modal="true">
+  <div class="relative w-full max-w-4xl max-h-[90vh] bg-background rounded-lg shadow-xl overflow-hidden flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-border">
+      <h2 id={`${modalId}-title`} class="text-xl font-semibold text-text-primary">{title}</h2>
+      <button id={`${modalId}-close-btn`} type="button" class="text-text-secondary hover:text-text-primary transition-colors" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex-grow p-1 overflow-y-auto">
+      <iframe 
+        src={viewerUrl} 
+        title={title} 
+        class="w-full h-[calc(90vh-100px)] border-0"
+        data-onerror="this.onerror=null; this.src='about:blank'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full\'><p class=\'text-red-500\'>Failed to load PDF. Please try downloading instead.</p></div>';"
+      ></iframe>
+    </div>
+    <div class="flex justify-end p-4 border-t border-border">
+      <a
+        href={pdfUrl}
+        download={fileName}
+        class="inline-flex items-center justify-center px-4 py-2 text-sm text-white
+               font-medium transition-all duration-200 rounded
+               bg-primary hover:bg-secondary focus:bg-secondary"
+      >
+        Download PDF
+      </a>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ modalId }}>
+  const modal = document.getElementById(modalId);
+  const closeButton = document.getElementById(`${modalId}-close-btn`);
+
+  function openModal() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = ''; // Restore background scrolling
+    }
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+  }
+
+  // Close modal if backdrop is clicked
+  if (modal) {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  // Listen for a custom event to open the modal
+  document.addEventListener('open-pdf-modal-event', (event) => {
+    if (event.detail?.modalId === modalId) {
+      openModal();
+    }
+  });
+
+  // Optional: Close modal with Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+</script>

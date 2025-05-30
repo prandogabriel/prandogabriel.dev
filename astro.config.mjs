@@ -6,8 +6,11 @@ import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 
+import vercel from "@astrojs/vercel/serverless";
+
 export default defineConfig({
   site: "https://www.prandogabriel.dev",
+  output: "server",
   integrations: [
     tailwind(),
     icon(),
@@ -19,4 +22,8 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    envPrefix: ['TELEGRAM_'],
+  },
+  adapter: vercel(),
 });
