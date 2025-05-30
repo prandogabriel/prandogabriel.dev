@@ -133,26 +133,27 @@ const { email, linkedin, github, location } = cvConfig.basic;
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const formData = new FormData(form);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-    };
-
     try {
+      // Show loading state
       formStatus?.classList.remove('hidden', 'text-red-500', 'text-green-500');
       formStatus?.classList.add('text-gray-400');
       formStatus!.textContent = 'Sending message...';
 
+      // Get form data
+      const formData = new FormData(form);
+
+      // Send request
       const response = await fetch('/api/send-message', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(data),
+        body: new URLSearchParams(formData as any),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const result = await response.json();
 
@@ -162,12 +163,13 @@ const { email, linkedin, github, location } = cvConfig.basic;
         formStatus!.textContent = 'Message sent successfully!';
         form.reset();
       } else {
-        throw new Error(result.message);
+        throw new Error(result.message || 'Failed to send message');
       }
     } catch (error) {
+      console.error('Error sending message:', error);
       formStatus?.classList.remove('text-gray-400');
       formStatus?.classList.add('text-red-500');
-      formStatus!.textContent = 'Failed to send message. Please try again.';
+      formStatus!.textContent = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
     }
   });
 </script> 
