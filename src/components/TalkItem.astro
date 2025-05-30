@@ -74,7 +74,7 @@ const formattedDate = new Date(date).toLocaleDateString('en-US', {
   />
 </div>
 
-<script define:vars={{ fileName, modalId }}>
+<script is:inline define:vars={{ fileName, modalId }}>
   const talkElement = document.getElementById(`talk-${fileName}`);
   
   if (talkElement) {

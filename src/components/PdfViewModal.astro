@@ -27,7 +27,7 @@ const viewerUrl = isLocalFile ? pdfUrl : `https://docs.google.com/viewer?url=${e
         src={viewerUrl} 
         title={title} 
         class="w-full h-[calc(90vh-100px)] border-0"
-        onerror="this.onerror=null; this.src='about:blank'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full\'><p class=\'text-red-500\'>Failed to load PDF. Please try downloading instead.</p></div>';"
+        data-onerror="this.onerror=null; this.src='about:blank'; this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full\'><p class=\'text-red-500\'>Failed to load PDF. Please try downloading instead.</p></div>';"
       ></iframe>
     </div>
     <div class="flex justify-end p-4 border-t border-border">
@@ -44,7 +44,7 @@ const viewerUrl = isLocalFile ? pdfUrl : `https://docs.google.com/viewer?url=${e
   </div>
 </div>
 
-<script define:vars={{ modalId }}>
+<script is:inline define:vars={{ modalId }}>
   const modal = document.getElementById(modalId);
   const closeButton = document.getElementById(`${modalId}-close-btn`);
 
