@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  icon: string;
+  title: string;
+  content: string;
+  href?: string;
+  isLink?: boolean;
+}
+
+const { icon, title, content, href, isLink = false } = Astro.props;
+--- 
+
+<div class="group relative bg-background rounded-xl p-6 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] border border-default">
+  <div class="relative z-10">
+    <div class="flex items-center space-x-4 mb-4">
+      <div class="bg-primary/20 p-3 rounded-lg group-hover:bg-primary/30 transition-colors border border-default">
+        <Icon name={icon} class="w-6 h-6 text-primary" />
+      </div>
+      <h2 class="text-xl font-semibold text-default group-hover:text-primary transition-colors">{title}</h2>
+    </div>
+    {isLink && href ? (
+      <a href={href} target="_blank" rel="noopener noreferrer" class="text-offset group-hover:text-default transition-colors truncate block">
+        {content}
+      </a>
+    ) : (
+      <p class="text-offset group-hover:text-default transition-colors truncate">{content}</p>
+    )}
+  </div>
+</div> 
