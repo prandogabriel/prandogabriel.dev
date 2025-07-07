@@ -1,0 +1,56 @@
+---
+title: "Serverless Framework Best Practices: Deployment Bucket Management"
+description: "How to efficiently manage deployment buckets in AWS when using the Serverless Framework, especially in environments with many services and stages."
+datetime: "2024-03-11"
+image: "https://picsum.photos/seed/2/640/426"
+url: "/blog/serverless-deployment-bucket-good-practices"
+---
+
+> _This is a translated and adapted crosspost from my original article on LinkedIn. You can read the original (in Portuguese) [here](https://www.linkedin.com/pulse/serverless-framework-boas-pr%25C3%25A1ticas-deployment-bucket-gabriel-prando-zzqtf/?trackingId=LCvlURnCKibctNa2tNnXIA%3D%3D)._
+
+# Serverless Framework Best Practices: Deployment Bucket Management
+
+When deploying an application to AWS using the Serverless Framework, the process is streamlined by several internal automations. When you run the `deploy` command, the framework packages your application, including zipped Lambda functions and a CloudFormation JSON file to update your AWS stack.
+
+Before updating a Lambda function, the framework compares the hash of your local files with the hash of the last deployed files stored in Amazon S3. This ensures that only changed components are uploaded, optimizing deployment time and resources.
+
+## The Default Bucket Problem
+
+On the first deployment, Serverless Framework automatically creates an S3 bucket for deployment artifacts, named `{service-name}-serverlessdeploymentbucket-{hash}`. While this is convenient for small projects, it quickly becomes unmanageable in environments with hundreds of microservices and multiple deployment stages (dev, staging, prod). AWS has a default limit of 100 buckets per account, which can be reached rapidly in such scenarios.
+
+## The Solution: Centralized Deployment Bucket
+
+To solve this, Serverless Framework allows you to specify a custom deployment bucket. This way, you can use a single bucket for multiple applications, making management easier and enabling you to apply security policies to your build artifacts.
+
+### How to Configure
+
+In your `serverless.yml` (or TypeScript config), under the `provider` section, specify the deployment bucket:
+
+```yaml
+provider:
+  name: aws
+  deploymentBucket:
+    name: my-super-serverless-framework-bucket
+```
+
+With this configuration, all deployments will use the specified bucket. The framework will create a folder for each service, then for each stage, and then for each deployment, keeping everything organized.
+
+## Migrating Existing Services
+
+If you want to migrate existing services that use the default bucket, follow these steps:
+1. Empty the old bucket before deploying with the new configuration.
+2. Deploy your service with the new bucket specified.
+3. The Serverless Framework will remove the old bucket and use the new one for future deployments.
+
+This ensures a smooth transition and avoids errors related to non-empty buckets.
+
+## Benefits
+
+- **Easier management**: Fewer buckets to track and maintain.
+- **Security**: Centralized policies for all deployment artifacts.
+- **Scalability**: Avoid AWS bucket limits in large environments.
+
+---
+
+**References:**
+- [Original LinkedIn article (Portuguese)](https://www.linkedin.com/pulse/serverless-framework-boas-pr%25C3%25A1ticas-deployment-bucket-gabriel-prando-zzqtf/?trackingId=LCvlURnCKibctNa2tNnXIA%3D%3D)
