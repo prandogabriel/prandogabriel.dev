@@ -28,7 +28,7 @@ const { Content } = await blog.render();
   <main class="container mx-auto px-4 py-8">
     <article class="prose prose-lg dark:prose-invert mx-auto">
       <header class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">{blog.data.title}</h1>
+        <h1 class="text-4xl font-bold text-default mb-4">{blog.data.title}</h1>
         <time datetime={blog.data.datetime} class="text-offset">
           {new Date(blog.data.datetime).toLocaleDateString('en-US', { 
             year: 'numeric', 
@@ -71,12 +71,12 @@ const { Content } = await blog.render();
   .markdown-content :global(h4),
   .markdown-content :global(h5),
   .markdown-content :global(h6) {
-    color: var(--color-foreground);
+    color: var(--color-text);
     font-weight: bold;
   }
 
   .markdown-content :global(p) {
-    color: var(--color-foreground-80);
+    color: var(--color-text-offset);
   }
 
   .markdown-content :global(a) {
@@ -84,11 +84,11 @@ const { Content } = await blog.render();
   }
 
   .markdown-content :global(a:hover) {
-    color: var(--color-primary-80);
+    color: var(--color-secondary);
   }
 
   .markdown-content :global(strong) {
-    color: var(--color-foreground);
+    color: var(--color-text);
   }
 
   .markdown-content :global(code) {
@@ -96,13 +96,13 @@ const { Content } = await blog.render();
   }
 
   .markdown-content :global(pre) {
-    background-color: var(--color-offset);
-    color: var(--color-foreground);
+    background-color: var(--color-background-offset);
+    color: var(--color-text);
   }
 
   .markdown-content :global(blockquote) {
     border-left-color: var(--color-primary);
-    color: var(--color-foreground-80);
+    color: var(--color-text-offset);
   }
 
   .markdown-content :global(img) {
@@ -111,6 +111,6 @@ const { Content } = await blog.render();
 
   .markdown-content :global(ul),
   .markdown-content :global(ol) {
-    color: var(--color-foreground-80);
+    color: var(--color-text-offset);
   }
 </style>
