@@ -27,6 +27,11 @@ import { Icon } from 'astro-icon/components';
         localStorage.setItem('theme', newTheme);
         updateToggleThemeIcon();
         toggleMarkdownTheme(newTheme);
+        // @ts-ignore: updateGiscusTheme is defined globally in [slug].astro
+        if (typeof window !== 'undefined' && window.updateGiscusTheme) {
+            // @ts-ignore
+            window.updateGiscusTheme(newTheme);
+        }
     });
 
     updateToggleThemeIcon();
