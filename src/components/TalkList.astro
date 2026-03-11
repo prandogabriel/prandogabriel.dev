@@ -4,23 +4,25 @@ import TalkItem from './TalkItem.astro';
 ---
 
 <section class="py-12 bg-background">
-  <div class="container mx-auto px-4 max-w-6xl">
-    <h1 class="text-center text-3xl mb-10">Talks & Presentations</h1>
-    <p class="mt-4 text-center text-offset mb-10">
-      Explore the talks and presentations I've delivered, covering topics like
-      serverless architectures, CI/CD optimization, distributed systems, and
-      cloud technologies.
-    </p>
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {talks.map((talk) => (
-        <TalkItem 
-          link={talk.link}
-          title={talk.title}
-          event={talk.event}
-          date={talk.date}
-        />
-      ))}
+  <div class="mx-auto max-w-5xl px-4 py-4 sm:px-6 lg:px-8">
+    <div class="space-y-8">
+      <div class="rounded-[1.75rem] border border-default bg-[var(--color-paper)] px-6 py-7 shadow-[var(--shadow-soft)] sm:px-8">
+        <p class="eyebrow">Talks</p>
+        <h1 class="mt-3 font-display text-4xl font-semibold tracking-[-0.04em] text-default">
+          Public speaking
+        </h1>
+      </div>
+
+      <div class="min-w-0 rounded-[1.75rem] border border-default bg-[var(--color-paper)] shadow-[var(--shadow-soft)] divide-y divide-default">
+        {talks.map((talk) => (
+          <TalkItem
+            link={talk.link}
+            title={talk.title}
+            event={talk.event}
+            date={talk.date}
+          />
+        ))}
+      </div>
     </div>
   </div>
 </section>

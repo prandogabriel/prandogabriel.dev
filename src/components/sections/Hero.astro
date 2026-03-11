@@ -56,6 +56,7 @@ import PdfViewModal from '../PdfViewModal.astro';
           <div class="relative group flex items-center">
             <button
               id="view-resume-btn"
+              data-pdf-modal-open="pdf-modal"
               title="View Resume"
               class="inline-flex items-center justify-center px-6 py-3 text-base text-white
                                 font-semibold transition-all duration-200 rounded gap-2
@@ -85,19 +86,3 @@ import PdfViewModal from '../PdfViewModal.astro';
 />
 
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const viewResumeButton = document.getElementById('view-resume-btn');
-    
-    if (viewResumeButton) {
-      viewResumeButton.addEventListener('click', () => {
-        // Dispatch a custom event to open the modal with the correct modalId
-        const event = new CustomEvent('open-pdf-modal-event', {
-          detail: { modalId: 'pdf-modal' }
-        });
-        document.dispatchEvent(event);
-      });
-    } 
-  });
-</script>

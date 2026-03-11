@@ -90,7 +90,6 @@ export const POST: APIRoute = async ({ request }) => {
       }
     );
   } catch (error) {
-    console.error('Error in API route:', error);
     return new Response(
       JSON.stringify({
         success: false,

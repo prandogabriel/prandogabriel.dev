@@ -1,60 +1,25 @@
 ---
-import { Icon } from 'astro-icon/components';
 import { basic } from '../../config/cv.json';
 const currentYear = new Date().getFullYear();
 ---
 
-<section class="py-10 mt-4">
-    <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div class="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
-            <div class="xl:flex xl:items-center xl:justify-start">
-                <p class="mt-5 text-sm xl:ml-6 xl:mt-0">
-                    © {currentYear} Gabriel Prando. All Rights Reserved.
-                </p>
-            </div>
-
-            <div class="items-center mt-8 xl:mt-0 xl:flex xl:justify-end xl:space-x-8">
-                <ul class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 xl:justify-end">
-                    <li>
-                        <a href="/" title="About" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/talks" title="Talks" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            Talks
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/blogs" title="Blog" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/contact" title="Contact" class="text-sm transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="w-full h-px mt-8 mb-5 xl:w-px xl:m-0 xl:h-6 bg-border"></div>
-
-                <ul class="flex items-center justify-center space-x-8 xl:justify-end">
-                    <li>
-                        <a href={basic?.github} title="Github" target="_blank" rel="noopener noreferrer"
-                           class="block transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            <Icon name="Github" />
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href={basic?.linkedin} title="Linkedin" target="_blank" rel="noopener noreferrer"
-                           class="block transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80">
-                            <Icon name="Linkedin" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<footer class="relative z-10 px-4 pb-10 pt-4 sm:px-6 lg:px-8">
+  <div class="mx-auto flex max-w-7xl flex-col gap-4 rounded-[2rem] border border-default bg-background-offset px-6 py-6 shadow-[var(--shadow-soft)] backdrop-blur md:flex-row md:items-center md:justify-between">
+    <div>
+      <p class="font-display text-lg font-semibold tracking-[-0.04em] text-default">
+        {basic?.name}
+      </p>
+      <p class="mt-1 text-sm text-offset">
+        © {currentYear} All rights reserved.
+      </p>
     </div>
-</section>
+
+    <div class="flex flex-wrap items-center gap-5 text-sm text-offset">
+      <a class="transition-colors hover:text-default" href="/talks">Talks</a>
+      <a class="transition-colors hover:text-default" href="/blogs">Blog</a>
+      <a class="transition-colors hover:text-default" href="/contact">Contact</a>
+      <a class="transition-colors hover:text-default" href={basic?.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a class="transition-colors hover:text-default" href={basic?.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
