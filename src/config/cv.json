@@ -50,6 +50,8 @@
       "sub_title": "Kojo",
       "link": "https://www.usekojo.com/",
       "years": "2025 - Present",
+      "location": "United States",
+      "work_mode": "Remote",
       "details": "Building enterprise features across React/Next.js, React Native and a Node.js/GraphQL backend. Led RBAC migration for roughly 2,000 organizations and 45,000+ users, implemented cross-organization user management, authored technical specs for complex rollouts, and improved query performance, observability and CI/CD reliability."
     },
     {
@@ -57,6 +59,8 @@
       "sub_title": "iFood",
       "link": "https://institucional.ifood.com.br/en/",
       "years": "2024 - 2025",
+      "location": "Brazil",
+      "work_mode": "Remote",
       "details": "Designed and optimized CI/CD pipelines in GitLab CI for more than 4,000 applications, built automation and backend services with Golang and Java on Kubernetes, and improved deployment safety with Helm and Argo Rollouts. Reduced pipeline execution time by 50% and simplified rollback operations adopted by over 2,000 applications."
     },
     {
@@ -64,6 +68,8 @@
       "sub_title": "Conta Simples",
       "link": "https://www.contasimples.com/",
       "years": "2024 - 2024",
+      "location": "Brazil",
+      "work_mode": "Remote",
       "details": "Redesigned technology-agnostic GitHub Actions workflows, standardized GitHub permissions, built Lambda layers and Serverless Framework plugins, and strengthened the internal platform with Prometheus, Grafana, Terraform, Helm and Kubernetes. Delivered reusable multi-language CI/CD workflows and an observability layer based on the AWS Lambda Telemetry API."
     },
     {
@@ -71,6 +77,8 @@
       "sub_title": "Conta Simples",
       "link": "https://www.contasimples.com/",
       "years": "2022 - 2024",
+      "location": "Brazil",
+      "work_mode": "Remote",
       "details": "Created internal tools, libraries and SDKs with Node.js and Golang, automated observability provisioning, and built reusable CI/CD workflows for serverless applications on AWS. Defined minimum observability standards, supported the migration of about 400 repositories from Azure DevOps to GitHub, and helped reduce login-related fraud by more than 70%."
     },
     {
@@ -78,6 +86,8 @@
       "sub_title": "Conta Simples",
       "link": "https://www.contasimples.com/",
       "years": "2021 - 2022",
+      "location": "Brazil",
+      "work_mode": "Remote",
       "details": "Developed backend features with Node.js, Golang and AWS services such as Lambda, SNS, SQS, Cognito, API Gateway, DynamoDB and Aurora. Built REST and GraphQL APIs, internal libraries and automated tests, and delivered financial products including batch PIX processing and tax receipt attachment workflows."
     },
     {
@@ -85,6 +95,8 @@
       "sub_title": "Bonaparte",
       "link": "https://www.bonaparte.ag/",
       "years": "2020 - 2021",
+      "location": "Brazil",
+      "work_mode": "Remote",
       "details": "Developed microservices with Node.js, TypeScript, MariaDB and Strapi, created and maintained Kubernetes resources, configured Nginx reverse proxy, and contributed to frontend work with Nuxt.js. Also implemented backend features in a serverless architecture running on Kubernetes with Kubeless and Docker."
     }
   ],
