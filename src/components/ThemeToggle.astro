@@ -2,10 +2,12 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-<button id="toggle-theme-button" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm
-    font-medium rounded-lg border bg-background
-    text-text shadow-sm hover:bg-background-offset
-    focus:outline-none focus:bg-background-offset">
+<button
+  id="toggle-theme-button"
+  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-default bg-default text-default transition-colors hover:bg-background-offset focus:outline-none"
+  title="Toggle theme"
+  type="button"
+>
     <div id="icon-theme-light">
         <Icon id='toggle-theme-icon' name={'Sun'} />
     </div>

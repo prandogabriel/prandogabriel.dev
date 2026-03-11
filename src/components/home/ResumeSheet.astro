@@ -1,0 +1,236 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import heroImage from '../../assets/prando.jpeg';
+import cvConfig from '../../config/cv.json';
+import ThemeToggle from '../ThemeToggle.astro';
+const { basic, highlights, skills, experiences, education, talks } = cvConfig;
+const selectedTalks = talks.slice(0, 3);
+const menuItems = [
+  { name: 'Talks', href: '/talks' },
+  { name: 'Blog', href: '/blogs' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const formatMonth = (value: string) =>
+  new Date(`${value}-01`).toLocaleDateString('en-US', {
+    month: 'short',
+    year: 'numeric',
+  });
+
+const formatTalkLanguage = (value: string) => value.toUpperCase();
+---
+
+<main class="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
+  <section class="paper-sheet overflow-hidden">
+    <div class="grid gap-0 lg:grid-cols-[18rem_minmax(0,1fr)]">
+      <aside class="border-b border-default bg-[var(--color-paper-muted)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
+        <div class="space-y-8 lg:sticky lg:top-24">
+          <div class="space-y-4">
+            <div class="overflow-hidden rounded-[1.75rem] border border-default bg-background shadow-[var(--shadow-soft)]">
+              <Image
+                src={heroImage}
+                alt={basic.name}
+                width={560}
+                format="webp"
+                quality={80}
+                loading="eager"
+                fetchpriority="high"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <div>
+              <p class="font-display text-3xl font-semibold tracking-[-0.04em] text-default">
+                {basic.name}
+              </p>
+              <p class="mt-2 text-sm leading-6 text-offset">
+                {basic.job}
+              </p>
+              <p class="mt-1 text-sm leading-6 text-offset">
+                {basic.location}
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <p class="eyebrow">Details</p>
+            <ul class="space-y-3 text-sm text-offset">
+              <li class="flex items-start gap-3">
+                <Icon class="mt-1 h-4 w-4 text-primary" name="Mail" />
+                <a class="story-link" href={`mailto:${basic.email}`}>{basic.email}</a>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon class="mt-1 h-4 w-4 text-primary" name="Linkedin" />
+                <a class="story-link" href={basic.linkedin} target="_blank" rel="noopener noreferrer">
+                  LinkedIn profile
+                </a>
+              </li>
+              <li class="flex items-start gap-3">
+                <Icon class="mt-1 h-4 w-4 text-primary" name="Github" />
+                <a class="story-link" href={basic.github} target="_blank" rel="noopener noreferrer">
+                  GitHub profile
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <p class="eyebrow">Core skills</p>
+            <div class="flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <span class="resume-chip">{skill}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="space-y-8 p-6 sm:p-8 lg:p-10">
+        <div class="flex flex-col gap-5 border-b border-default pb-7">
+          <div class="flex items-center justify-between gap-4">
+            <a href="/" class="font-display text-lg font-semibold tracking-[-0.04em] text-default">
+              {basic.name}
+            </a>
+
+            <div class="flex items-center gap-3">
+              <nav class="hidden items-center gap-5 md:flex">
+                {menuItems.map((item) => (
+                  <a href={item.href} class="text-sm text-offset transition-colors hover:text-default">
+                    {item.name}
+                  </a>
+                ))}
+              </nav>
+              <ThemeToggle />
+            </div>
+          </div>
+
+          <div class="grid gap-7 xl:grid-cols-[minmax(0,1fr)_15rem] xl:items-end">
+            <div class="space-y-4">
+              <div class="space-y-3">
+                <h1 class="font-display text-4xl font-semibold tracking-[-0.05em] text-default sm:text-5xl">
+                  {basic.job}
+                </h1>
+                <p class="max-w-2xl text-sm uppercase tracking-[0.18em] text-offset">
+                  {basic.headline}
+                </p>
+                <p class="max-w-2xl text-base leading-7 text-offset sm:text-lg">
+                  {basic.summary}
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <a class="button-primary" href="/contact">
+                  Contact
+                </a>
+                <a
+                  class="button-secondary"
+                  href={`/cv/${basic.cv_file_name}`}
+                  download={basic.cv_file_name}
+                >
+                  Download resume
+                </a>
+              </div>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              {highlights.slice(0, 3).map((item) => (
+                <div class="rounded-[1.25rem] border border-default bg-surface p-4">
+                  <p class="eyebrow mb-2">{item.label}</p>
+                  <p class="text-sm leading-6 text-default">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <section class="space-y-5">
+          <div class="section-heading">
+            <p class="eyebrow">Experience</p>
+            <h2 class="font-display text-3xl font-semibold tracking-[-0.04em] text-default">
+              Professional history
+            </h2>
+          </div>
+
+          <div class="space-y-6">
+            {experiences.map((item) => (
+              <article class="resume-entry">
+                <div class="flex flex-col gap-3 border-b border-default pb-4 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h3 class="text-xl font-semibold text-default">{item.title}</h3>
+                    <a class="story-link mt-1 inline-block text-sm" href={item.link} target="_blank" rel="noopener noreferrer">
+                      {item.sub_title}
+                    </a>
+                  </div>
+                  <p class="eyebrow md:pt-1">{item.years}</p>
+                </div>
+                <p class="mt-4 text-sm leading-7 text-offset">
+                  {item.details}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="grid gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div class="space-y-5">
+            <div class="section-heading">
+              <p class="eyebrow">Education</p>
+              <h2 class="font-display text-3xl font-semibold tracking-[-0.04em] text-default">
+                Academic path
+              </h2>
+            </div>
+
+            <div class="space-y-6">
+              {education.map((item) => (
+                <article class="resume-entry">
+                  <div class="flex flex-col gap-2 border-b border-default pb-4">
+                    <h3 class="text-lg font-semibold text-default">{item.title}</h3>
+                    <a class="story-link text-sm" href={item.link} target="_blank" rel="noopener noreferrer">
+                      {item.sub_title}
+                    </a>
+                    <p class="eyebrow">{item.years}</p>
+                  </div>
+                  <p class="mt-4 text-sm leading-7 text-offset">
+                    {item.details}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="space-y-5">
+              <div class="section-heading">
+                <p class="eyebrow">Selected talks</p>
+                <h2 class="font-display text-3xl font-semibold tracking-[-0.04em] text-default">
+                  Public speaking
+                </h2>
+              </div>
+
+              <div class="space-y-4">
+                {selectedTalks.map((talk) => (
+                  <article class="resume-entry relative">
+                    <span class="absolute right-4 top-4 rounded-full border border-default bg-[var(--color-paper-muted)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-offset">
+                      {formatTalkLanguage(talk.language)}
+                    </span>
+                    <p class="eyebrow">{formatMonth(talk.date)}</p>
+                    <h3 class="mt-2 pr-16 text-base font-semibold leading-7 text-default">
+                      {talk.title_en ?? talk.title}
+                    </h3>
+                    <p class="mt-2 text-sm text-offset">{talk.event}</p>
+                    <a class="story-link mt-4 inline-flex items-center gap-2 text-sm" href="/talks">
+                      View talks
+                      <Icon class="h-4 w-4" name="ArrowRight" />
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>

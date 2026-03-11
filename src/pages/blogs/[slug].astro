@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export const prerender = true;
@@ -11,7 +12,7 @@ export async function getStaticPaths() {
   });
 
   return blogs.map((blog) => ({
-    params: { slug: blog.slug },
+    params: { slug: blog.id },
     props: { blog },
   }));
 }
@@ -21,29 +22,32 @@ interface Props {
 }
 
 const { blog } = Astro.props;
-const { Content } = await blog.render();
+const { Content } = await render(blog);
 ---
 
 <Layout title={blog.data.title}>
-  <main class="container mx-auto px-4 py-8">
-    <article class="prose prose-lg dark:prose-invert mx-auto">
+  <main class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+    <article class="mx-auto max-w-3xl">
       <header class="mb-8">
-        <h1 class="text-4xl font-bold text-default mb-4">{blog.data.title}</h1>
-        <time datetime={blog.data.datetime} class="text-offset">
-          {new Date(blog.data.datetime).toLocaleDateString('en-US', { 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+        <p class="eyebrow">Article</p>
+        <h1 class="mt-2 font-display text-4xl font-semibold tracking-[-0.04em] text-default sm:text-5xl">
+          {blog.data.title}
+        </h1>
+        <time datetime={blog.data.datetime} class="mt-4 block text-sm text-offset">
+          {new Date(blog.data.datetime).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
           })}
         </time>
       </header>
-      
-      <div class="markdown-content">
+
+      <div id="markdown" class="markdown-content prose prose-lg mx-auto max-w-none dark:prose-invert">
         <Content />
       </div>
     </article>
 
-    <div class="mt-16" id="giscus-comments">
+    <div class="mx-auto mt-16 max-w-3xl" id="giscus-comments">
       <script is:inline src="https://giscus.app/client.js"
         data-repo="prandogabriel/prandogabriel.dev"
         data-repo-id="R_kgDONzIuyw"

@@ -2,41 +2,90 @@
   "basic": {
     "name": "Gabriel Prando",
     "job": "Senior Software Engineer",
+    "headline": "Software engineer focused on backend systems, platform work and distributed architectures.",
     "summary": "Building scalable, resilient distributed systems with a focus on serverless, containerized architectures, CI/CD optimization, and observability. Constantly improving developer experience and system reliability.",
+    "current_focus": "Open to senior backend and platform engineering conversations. Most comfortable in high-scale, cloud-native environments where reliability, delivery speed and developer experience matter.",
+    "availability": "Open to recruiter conversations",
     "cv_file_name": "prando_cv.pdf",
     "linkedin": "https://www.linkedin.com/in/prandogabriel/",
     "github": "https://github.com/prandogabriel",
     "email": "contact@prandogabriel.dev",
     "location": "Paraná, Brazil"
   },
+  "highlights": [
+    {
+      "label": "Experience",
+      "value": "6+ years building production systems"
+    },
+    {
+      "label": "Recent",
+      "value": "Enterprise SaaS, fintech and high-scale internal platforms"
+    },
+    {
+      "label": "Stack",
+      "value": "Node.js, TypeScript, Golang, AWS, Kubernetes"
+    },
+    {
+      "label": "Signal",
+      "value": "Technical writer and conference speaker"
+    }
+  ],
+  "skills": [
+    "Distributed Systems",
+    "Platform Engineering",
+    "Serverless Architecture",
+    "Node.js",
+    "TypeScript",
+    "Golang",
+    "AWS",
+    "Kubernetes",
+    "CI/CD",
+    "Observability",
+    "GraphQL",
+    "Developer Experience"
+  ],
   "experiences": [
     {
       "title": "Senior Software Engineer",
       "sub_title": "Kojo",
       "link": "https://www.usekojo.com/",
       "years": "2025 - Present",
-      "details": "Working at Kojo, a leader in construction material management software, as part of the Enterprise team. My role involves implementing features for high-tier enterprise clients, utilizing Node.js, React, GraphQL, and containerization technologies."
+      "details": "Building enterprise features across React/Next.js, React Native and a Node.js/GraphQL backend. Led RBAC migration for roughly 2,000 organizations and 45,000+ users, implemented cross-organization user management, authored technical specs for complex rollouts, and improved query performance, observability and CI/CD reliability."
     },
     {
-      "title": "Senior Software Engineer",
+      "title": "Senior Platform Engineer",
       "sub_title": "iFood",
       "link": "https://institucional.ifood.com.br/en/",
       "years": "2024 - 2025",
-      "details": "Part of the Automation team, responsible for the CI/CD ecosystem of thousands of applications supporting over 50 million users. Work primarily with Golang for CLI and web servers, GitLab pipelines, Argo Rollouts, and Kubernetes to enhance deployment efficiency and reliability."
+      "details": "Designed and optimized CI/CD pipelines in GitLab CI for more than 4,000 applications, built automation and backend services with Golang and Java on Kubernetes, and improved deployment safety with Helm and Argo Rollouts. Reduced pipeline execution time by 50% and simplified rollback operations adopted by over 2,000 applications."
     },
     {
-      "title": "Senior Software Engineer",
+      "title": "Senior Platform Engineer",
       "sub_title": "Conta Simples",
       "link": "https://www.contasimples.com/",
-      "years": "2021 - 2024",
-      "details": "Worked in the financial sector, building and maintaining a serverless ecosystem on AWS. Developed internal tools, SDKs, and CI/CD pipelines, optimizing deployments with GitHub Actions. Gained deep experience with AWS Lambda, event-driven architectures, and observability solutions to improve system reliability and performance."
+      "years": "2024 - 2024",
+      "details": "Redesigned technology-agnostic GitHub Actions workflows, standardized GitHub permissions, built Lambda layers and Serverless Framework plugins, and strengthened the internal platform with Prometheus, Grafana, Terraform, Helm and Kubernetes. Delivered reusable multi-language CI/CD workflows and an observability layer based on the AWS Lambda Telemetry API."
+    },
+    {
+      "title": "Platform Engineer",
+      "sub_title": "Conta Simples",
+      "link": "https://www.contasimples.com/",
+      "years": "2022 - 2024",
+      "details": "Created internal tools, libraries and SDKs with Node.js and Golang, automated observability provisioning, and built reusable CI/CD workflows for serverless applications on AWS. Defined minimum observability standards, supported the migration of about 400 repositories from Azure DevOps to GitHub, and helped reduce login-related fraud by more than 70%."
     },
     {
       "title": "Software Engineer",
+      "sub_title": "Conta Simples",
+      "link": "https://www.contasimples.com/",
+      "years": "2021 - 2022",
+      "details": "Developed backend features with Node.js, Golang and AWS services such as Lambda, SNS, SQS, Cognito, API Gateway, DynamoDB and Aurora. Built REST and GraphQL APIs, internal libraries and automated tests, and delivered financial products including batch PIX processing and tax receipt attachment workflows."
+    },
+    {
+      "title": "Backend/DevOps Developer",
       "sub_title": "Bonaparte",
       "link": "https://www.bonaparte.ag/",
       "years": "2020 - 2021",
-      "details": "Worked on a client in the real estate sector, developing and maintaining microservices using Node.js and TypeScript with Kubernetes. Designed and implemented backend solutions, configured CI/CD pipelines, and managed Kubernetes resources. Also contributed to frontend development with Nuxt.js for a real estate management system."
+      "details": "Developed microservices with Node.js, TypeScript, MariaDB and Strapi, created and maintained Kubernetes resources, configured Nginx reverse proxy, and contributed to frontend work with Nuxt.js. Also implemented backend features in a serverless architecture running on Kubernetes with Kubeless and Docker."
     }
   ],
   "education": [
@@ -44,8 +93,8 @@
       "title": "Master's Degree in Electrical and Computer Engineering",
       "sub_title": "Federal University of Technology – Paraná (UTFPR)",
       "link": "https://www.ppgeec-pb.com.br/",
-      "years": "2023 - Present",
-      "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 2030.5, IEEE 1547.1 standards and OpenADR 3.0."
+      "years": "2023 - 2026",
+      "details": "Focused on energy management systems and control architectures for Distributed Energy Resources (DERs), including IEEE 1547.1 standards and OpenADR 3.0."
     },
     {
       "title": "Bachelor's Degree in Computer Engineering",
@@ -58,6 +107,7 @@
   "talks": [
     {
       "title": "Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "title_en": "Building Your Own Observability Layer with the AWS Lambda Telemetry API",
       "event": "Serverless Days SP 2024 - São Paulo",
       "date": "2024-10",
       "language": "pt-br",
@@ -65,6 +115,7 @@
     },
     {
       "title": "Desmistificando WebSockets com AWS Lambda e API Gateway",
+      "title_en": "Demystifying WebSockets with AWS Lambda and API Gateway",
       "event": "Recrutatech 2024 - Curitiba",
       "date": "2024-10",
       "language": "pt-br",
@@ -72,6 +123,7 @@
     },
     {
       "title": "Desenvolvendo Soluções com IA de forma rápida na GCP com Serverless",
+      "title_en": "Building AI Solutions Quickly on GCP with Serverless",
       "event": "DevFest 2024 - Pato Branco",
       "date": "2024-09",
       "language": "pt-br",
@@ -79,6 +131,7 @@
     },
     {
       "title": "Evitando Lock-ins, Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "title_en": "Avoiding Lock-In by Building Your Own Observability Layer with the AWS Lambda Telemetry API",
       "event": "DevOpsDays Curitiba 2024",
       "date": "2024-08",
       "language": "pt-br",
@@ -86,6 +139,7 @@
     },
     {
       "title": "Workshop - Introdução a Aplicações Serverless na AWS",
+      "title_en": "Workshop - Introduction to Serverless Applications on AWS",
       "event": "Semana Acadêmica de Eng. Comp e ADS - UTFPR-PB",
       "date": "2024-06",
       "language": "pt-br",
@@ -93,6 +147,7 @@
     },
     {
       "title": "Performance e Escalabilidade em Bancos SQL",
+      "title_en": "Performance and Scalability in SQL Databases",
       "event": "Internal company event",
       "date": "2023-08",
       "language": "pt-br",
@@ -100,6 +155,7 @@
     },
     {
       "title": "Introduction to MQTT",
+      "title_en": "Introduction to MQTT",
       "event": "Internal company event",
       "date": "2022-11",
       "language": "pt-br",
@@ -107,6 +163,7 @@
     },
     {
       "title": "Serverless Computing",
+      "title_en": "Serverless Computing",
       "event": "1ª OCCAM week",
       "date": "2022-07",
       "language": "pt-br",
@@ -114,6 +171,7 @@
     },
     {
       "title": "Performance de Sistema de Gerenciamento de Banco de Dados (SGBD)",
+      "title_en": "Database Management System Performance",
       "event": "Internal company event",
       "date": "2022-06",
       "language": "pt-br",
@@ -121,6 +179,7 @@
     },
     {
       "title": "AWS Step Functions",
+      "title_en": "AWS Step Functions",
       "event": "Internal company event",
       "date": "2022-01",
       "language": "pt-br",
@@ -128,6 +187,7 @@
     },
     {
       "title": "Elastic Stack",
+      "title_en": "Elastic Stack",
       "event": "Internal company event",
       "date": "2021-11",
       "language": "pt-br",
@@ -135,6 +195,7 @@
     },
     {
       "title": "WebSockets e AWS API Gateway WebSocket",
+      "title_en": "WebSockets and AWS API Gateway WebSocket",
       "event": "Internal company event",
       "date": "2021-08",
       "language": "pt-br",

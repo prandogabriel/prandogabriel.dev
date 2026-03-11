@@ -7,7 +7,7 @@ const IFRAME_SELECTOR = 'iframe.giscus-frame';
 const SOURCE_GISCUS_DOMAIN = 'https://giscus.app';
 
 window.addEventListener('load', () => {
-  const themeSaved = localStorage.getItem('theme');
+  const themeSaved = localStorage.getItem('theme') || getCurrentTheme() || dark;
 
   sendThemeMessage(themeSaved);
 });

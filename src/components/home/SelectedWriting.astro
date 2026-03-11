@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  posts: CollectionEntry<'blogs'>[];
+}
+
+const { posts } = Astro.props;
+
+const formatDate = (value: string) =>
+  new Date(value).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+---
+
+<section class="mx-auto mt-4 w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+  <div class="paper-sheet p-6 sm:p-8">
+    <div class="flex flex-col gap-4 border-b border-default pb-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="eyebrow">Writing</p>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-[-0.04em] text-default">
+          Selected writing
+        </h2>
+      </div>
+      <a class="story-link inline-flex items-center gap-2 text-sm" href="/blogs">
+        Visit the full archive
+        <Icon class="h-4 w-4" name="ArrowRight" />
+      </a>
+    </div>
+
+    <div class="mt-6 grid gap-4 lg:grid-cols-2">
+      {posts.map((post) => (
+        <a class="group resume-entry transition-transform duration-200 hover:-translate-y-1" href={`/blogs/${post.id}`}>
+          <p class="eyebrow">{formatDate(post.data.datetime)}</p>
+          <h3 class="mt-3 text-xl font-semibold text-default transition-colors group-hover:text-primary">
+            {post.data.title}
+          </h3>
+          <p class="mt-3 text-sm leading-7 text-offset">
+            {post.data.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

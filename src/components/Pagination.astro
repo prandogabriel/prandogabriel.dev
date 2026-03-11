@@ -1,6 +1,4 @@
 ---
-import type { Page } from 'astro';
-
 interface Props {
   currentPage: number;
   lastPage: number;
@@ -10,39 +8,41 @@ const { currentPage, lastPage } = Astro.props;
 
 const hasPreviousPage = currentPage > 1;
 const hasNextPage = currentPage < lastPage;
+const previousHref = currentPage === 2 ? '/blogs' : `/blogs/${currentPage - 1}`;
+const nextHref = `/blogs/${currentPage + 1}`;
 ---
 
-<nav aria-label="Blog pagination" class="flex justify-center items-center space-x-4 mt-8">
+<nav aria-label="Blog pagination" class="mt-8 flex items-center justify-center gap-4">
   {hasPreviousPage ? (
     <a
-      href={`/blogs/${currentPage - 1}`}
-      class="transition-all duration-300 ease-in-out flex items-center justify-center px-6 py-2 h-10 rounded-full border border-border bg-background hover:bg-offset hover:shadow-lg"
+      href={previousHref}
+      class="inline-flex h-11 items-center justify-center rounded-full border border-default bg-background-offset px-6 text-sm text-default shadow-[var(--shadow-soft)] transition-transform duration-200 hover:-translate-y-1"
     >
       Previous
     </a>
   ) : (
     <span
-      class="transition-all duration-300 ease-in-out flex items-center justify-center px-6 py-2 h-10 rounded-full border cursor-not-allowed text-offset bg-offset"
+      class="inline-flex h-11 cursor-not-allowed items-center justify-center rounded-full border border-default bg-default px-6 text-sm text-offset"
       aria-disabled="true"
     >
       Previous
     </span>
   )}
 
-  <span class="flex items-center justify-center px-6 py-2 h-10 rounded-full">
-    {currentPage}
+  <span class="eyebrow rounded-full border border-default bg-default px-5 py-3 text-default">
+    Page {currentPage} / {lastPage}
   </span>
 
   {hasNextPage ? (
     <a
-      href={`/blogs/${currentPage + 1}`}
-      class="transition-all duration-300 ease-in-out flex items-center justify-center px-6 py-2 h-10 rounded-full border border-border bg-background hover:bg-offset hover:shadow-lg"
+      href={nextHref}
+      class="inline-flex h-11 items-center justify-center rounded-full border border-default bg-background-offset px-6 text-sm text-default shadow-[var(--shadow-soft)] transition-transform duration-200 hover:-translate-y-1"
     >
       Next
     </a>
   ) : (
     <span
-      class="transition-all duration-300 ease-in-out flex items-center justify-center px-6 py-2 h-10 rounded-full border cursor-not-allowed text-offset bg-offset"
+      class="inline-flex h-11 cursor-not-allowed items-center justify-center rounded-full border border-default bg-default px-6 text-sm text-offset"
       aria-disabled="true"
     >
       Next

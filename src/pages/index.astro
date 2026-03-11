@@ -1,10 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/sections/Hero.astro';
-import Resume from '../components/sections/Resume.astro';
+import { getCollection } from 'astro:content';
+import ResumeSheet from '../components/home/ResumeSheet.astro';
+import SelectedWriting from '../components/home/SelectedWriting.astro';
+
+const blogs = await getCollection('blogs', ({ data }) => !data.draft);
+const featuredPosts = blogs
+  .sort((a, b) => new Date(b.data.datetime).getTime() - new Date(a.data.datetime).getTime())
+  .slice(0, 2);
 ---
 
-<Layout title="Gabriel Prando">
-	<Hero />
-	<Resume />
+<Layout title="Gabriel Prando" showHeader={false}>
+  <ResumeSheet />
+  <SelectedWriting posts={featuredPosts} />
 </Layout>
