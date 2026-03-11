@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import heroImage from '../../assets/prando.png';
+import heroImage from '../../assets/prando.jpeg';
 import cvConfig from '../../config/cv.json';
 import ThemeToggle from '../ThemeToggle.astro';
 const { basic, highlights, skills, experiences, education, talks } = cvConfig;
@@ -29,6 +29,11 @@ const formatMonth = (value: string) =>
               <Image
                 src={heroImage}
                 alt={basic.name}
+                width={560}
+                format="webp"
+                quality={80}
+                loading="eager"
+                fetchpriority="high"
                 class="h-full w-full object-cover"
               />
             </div>

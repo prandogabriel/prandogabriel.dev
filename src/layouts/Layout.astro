@@ -21,7 +21,7 @@ const { title, description = d, showHeader = true } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,14 +40,14 @@ const { title, description = d, showHeader = true } = Astro.props;
     <meta property="og:url" content="https://www.prandogabriel.dev/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/favicon.png" />
+    <meta property="og:image" content="/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.prandogabriel.dev/" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/favicon.png" />
+    <meta property="twitter:image" content="/og-image.png" />
 
 <!-- Meta Tags Generated with https://metatags.io -->
 
