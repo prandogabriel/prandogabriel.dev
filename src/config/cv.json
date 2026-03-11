@@ -107,6 +107,7 @@
   "talks": [
     {
       "title": "Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "title_en": "Building Your Own Observability Layer with the AWS Lambda Telemetry API",
       "event": "Serverless Days SP 2024 - São Paulo",
       "date": "2024-10",
       "language": "pt-br",
@@ -114,6 +115,7 @@
     },
     {
       "title": "Desmistificando WebSockets com AWS Lambda e API Gateway",
+      "title_en": "Demystifying WebSockets with AWS Lambda and API Gateway",
       "event": "Recrutatech 2024 - Curitiba",
       "date": "2024-10",
       "language": "pt-br",
@@ -121,6 +123,7 @@
     },
     {
       "title": "Desenvolvendo Soluções com IA de forma rápida na GCP com Serverless",
+      "title_en": "Building AI Solutions Quickly on GCP with Serverless",
       "event": "DevFest 2024 - Pato Branco",
       "date": "2024-09",
       "language": "pt-br",
@@ -128,6 +131,7 @@
     },
     {
       "title": "Evitando Lock-ins, Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
+      "title_en": "Avoiding Lock-In by Building Your Own Observability Layer with the AWS Lambda Telemetry API",
       "event": "DevOpsDays Curitiba 2024",
       "date": "2024-08",
       "language": "pt-br",
@@ -135,6 +139,7 @@
     },
     {
       "title": "Workshop - Introdução a Aplicações Serverless na AWS",
+      "title_en": "Workshop - Introduction to Serverless Applications on AWS",
       "event": "Semana Acadêmica de Eng. Comp e ADS - UTFPR-PB",
       "date": "2024-06",
       "language": "pt-br",
@@ -142,6 +147,7 @@
     },
     {
       "title": "Performance e Escalabilidade em Bancos SQL",
+      "title_en": "Performance and Scalability in SQL Databases",
       "event": "Internal company event",
       "date": "2023-08",
       "language": "pt-br",
@@ -149,6 +155,7 @@
     },
     {
       "title": "Introduction to MQTT",
+      "title_en": "Introduction to MQTT",
       "event": "Internal company event",
       "date": "2022-11",
       "language": "pt-br",
@@ -156,6 +163,7 @@
     },
     {
       "title": "Serverless Computing",
+      "title_en": "Serverless Computing",
       "event": "1ª OCCAM week",
       "date": "2022-07",
       "language": "pt-br",
@@ -163,6 +171,7 @@
     },
     {
       "title": "Performance de Sistema de Gerenciamento de Banco de Dados (SGBD)",
+      "title_en": "Database Management System Performance",
       "event": "Internal company event",
       "date": "2022-06",
       "language": "pt-br",
@@ -170,6 +179,7 @@
     },
     {
       "title": "AWS Step Functions",
+      "title_en": "AWS Step Functions",
       "event": "Internal company event",
       "date": "2022-01",
       "language": "pt-br",
@@ -177,6 +187,7 @@
     },
     {
       "title": "Elastic Stack",
+      "title_en": "Elastic Stack",
       "event": "Internal company event",
       "date": "2021-11",
       "language": "pt-br",
@@ -184,6 +195,7 @@
     },
     {
       "title": "WebSockets e AWS API Gateway WebSocket",
+      "title_en": "WebSockets and AWS API Gateway WebSocket",
       "event": "Internal company event",
       "date": "2021-08",
       "language": "pt-br",

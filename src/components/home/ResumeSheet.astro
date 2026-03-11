@@ -17,6 +17,8 @@ const formatMonth = (value: string) =>
     month: 'short',
     year: 'numeric',
   });
+
+const formatTalkLanguage = (value: string) => value.toUpperCase();
 ---
 
 <main class="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
@@ -209,9 +211,14 @@ const formatMonth = (value: string) =>
 
               <div class="space-y-4">
                 {selectedTalks.map((talk) => (
-                  <article class="resume-entry">
+                  <article class="resume-entry relative">
+                    <span class="absolute right-4 top-4 rounded-full border border-default bg-[var(--color-paper-muted)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-offset">
+                      {formatTalkLanguage(talk.language)}
+                    </span>
                     <p class="eyebrow">{formatMonth(talk.date)}</p>
-                    <h3 class="mt-2 text-base font-semibold leading-7 text-default">{talk.title}</h3>
+                    <h3 class="mt-2 pr-16 text-base font-semibold leading-7 text-default">
+                      {talk.title_en ?? talk.title}
+                    </h3>
                     <p class="mt-2 text-sm text-offset">{talk.event}</p>
                     <a class="story-link mt-4 inline-flex items-center gap-2 text-sm" href="/talks">
                       View talks
