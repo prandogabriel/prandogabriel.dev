@@ -24,10 +24,10 @@ const formatTalkLanguage = (value: string) => value.toUpperCase();
 <main class="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
   <section class="paper-sheet overflow-hidden">
     <div class="grid gap-0 lg:grid-cols-[18rem_minmax(0,1fr)]">
-      <aside class="border-b border-default bg-[var(--color-paper-muted)] p-6 sm:p-8 lg:border-b-0 lg:border-r">
+      <aside class="order-2 border-b border-default bg-[var(--color-paper-muted)] p-6 sm:p-8 lg:order-1 lg:border-b-0 lg:border-r">
         <div class="space-y-8 lg:sticky lg:top-24">
-          <div class="space-y-4">
-            <div class="overflow-hidden rounded-[1.75rem] border border-default bg-background shadow-[var(--shadow-soft)]">
+          <div class="hidden space-y-4 lg:block">
+            <div class="mx-auto w-full max-w-[13rem] overflow-hidden rounded-[1.75rem] border border-default bg-background shadow-[var(--shadow-soft)] sm:mx-0 lg:max-w-none">
               <Image
                 src={heroImage}
                 alt={basic.name}
@@ -36,7 +36,7 @@ const formatTalkLanguage = (value: string) => value.toUpperCase();
                 quality={80}
                 loading="eager"
                 fetchpriority="high"
-                class="h-full w-full object-cover"
+                class="aspect-[4/5] h-full w-full object-cover object-top"
               />
             </div>
             <div>
@@ -85,7 +85,7 @@ const formatTalkLanguage = (value: string) => value.toUpperCase();
         </div>
       </aside>
 
-      <div class="space-y-8 p-6 sm:p-8 lg:p-10">
+      <div class="order-1 space-y-8 p-6 sm:p-8 lg:order-2 lg:p-10">
         <div class="flex flex-col gap-5 border-b border-default pb-7">
           <div class="flex items-center justify-between gap-4">
             <a href="/" class="font-display text-lg font-semibold tracking-[-0.04em] text-default">
@@ -101,6 +101,40 @@ const formatTalkLanguage = (value: string) => value.toUpperCase();
                 ))}
               </nav>
               <ThemeToggle />
+            </div>
+          </div>
+
+          <nav class="flex flex-wrap gap-2 md:hidden">
+            {menuItems.map((item) => (
+              <a
+                href={item.href}
+                class="button-secondary px-4 py-2 text-sm"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+          <div class="grid items-center gap-4 rounded-[1.5rem] border border-default bg-[var(--color-paper-muted)] p-4 lg:hidden sm:grid-cols-[8.5rem_minmax(0,1fr)]">
+            <div class="mx-auto w-full max-w-[8.5rem] overflow-hidden rounded-[1.25rem] border border-default bg-background shadow-[var(--shadow-soft)]">
+              <Image
+                src={heroImage}
+                alt={basic.name}
+                width={560}
+                format="webp"
+                quality={80}
+                loading="eager"
+                fetchpriority="high"
+                class="aspect-[4/5] h-full w-full object-cover object-top"
+              />
+            </div>
+            <div class="text-center sm:text-left">
+              <p class="mt-2 font-display text-2xl font-semibold tracking-[-0.04em] text-default">
+                {basic.name}
+              </p>
+              <p class="mt-2 text-sm leading-6 text-offset">
+                {basic.location}
+              </p>
             </div>
           </div>
 
