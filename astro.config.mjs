@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
 import vercel from "@astrojs/vercel";
 
@@ -12,7 +12,6 @@ export default defineConfig({
   site: "https://www.prandogabriel.dev",
   output: "server",
   integrations: [
-    tailwind(),
     icon(),
     mdx(),
     sitemap(),
@@ -23,6 +22,7 @@ export default defineConfig({
     }),
   ],
   vite: {
+    plugins: [tailwindcss()],
     envPrefix: ['TELEGRAM_'],
   },
   adapter: vercel(),
