@@ -118,6 +118,14 @@
   ],
   "talks": [
     {
+      "title": "Como escalar seu banco PostgreSQL",
+      "title_en": "How to Scale your PostgreSQL DB",
+      "event": "3º DevParana Francisco Beltrão",
+      "date": "2025-11",
+      "language": "pt-br",
+      "link": "https://raw.githubusercontent.com/prandogabriel/talks/main/assets/como-escalar-seu-banco-PostgreSQL.pdf"
+    },
+    {
       "title": "Construindo sua própria Layer de Observabilidade com AWS Lambda Telemetry API",
       "title_en": "Building Your Own Observability Layer with the AWS Lambda Telemetry API",
       "event": "Serverless Days SP 2024 - São Paulo",
