@@ -116,6 +116,18 @@
       "details": "Covers hardware and software integration, including computer architecture, embedded systems, networking, and distributed computing. My final project focused on sensor networks and high availability architecture for IoT applications."
     }
   ],
+  "projects": [
+    {
+      "title": "prnd.fyi",
+      "description": "A URL shortener with click tracking, QR code generation, expiration rules and Telegram-based authentication. Free for personal use.",
+      "link": "https://prnd.fyi/"
+    },
+    {
+      "title": "Realtime Q&A",
+      "description": "A live questions and answers platform for real-time interactive Q&A sessions.",
+      "link": "https://questions.prandogabriel.dev/"
+    }
+  ],
   "talks": [
     {
       "title": "Como escalar seu banco PostgreSQL",
