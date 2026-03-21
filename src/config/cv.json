@@ -52,7 +52,7 @@
       "years": "2025 - Present",
       "location": "United States",
       "work_mode": "Remote",
-      "details": "Building enterprise features across React/Next.js, React Native and a Node.js/GraphQL backend. Led RBAC migration for roughly 2,000 organizations and 45,000+ users, implemented cross-organization user management, authored technical specs for complex rollouts, and improved query performance, observability and CI/CD reliability."
+      "details": "Kojo is the leading materials procurement platform for trade and self-perform general contractors. By connecting office teams, field crews, the warehouse, and vendors on one all-inclusive procurement platform. Building enterprise features across React/Next.js, React Native and a Node.js/GraphQL backend. Led RBAC migration for roughly 2,000 organizations and 45,000+ users, implemented cross-organization user management, authored technical specs for complex rollouts, and improved query performance, observability and CI/CD reliability."
     },
     {
       "title": "Senior Platform Engineer",
@@ -61,7 +61,7 @@
       "years": "2024 - 2025",
       "location": "Brazil",
       "work_mode": "Remote",
-      "details": "Designed and optimized CI/CD pipelines in GitLab CI for more than 4,000 applications, built automation and backend services with Golang and Java on Kubernetes, and improved deployment safety with Helm and Argo Rollouts. Reduced pipeline execution time by 50% and simplified rollback operations adopted by over 2,000 applications."
+      "details": "iFood is Brazil's largest food delivery platform with 55M+ users, 400K+ partner restaurants, 120M+ monthly orders and over 80% market share. Designed and optimized CI/CD pipelines in GitLab CI for more than 4,000 applications, built automation and backend services with Golang and Java on Kubernetes, and improved deployment safety with Helm and Argo Rollouts. Reduced pipeline execution time by 50% and simplified rollback operations adopted by over 2,000 applications."
     },
     {
       "title": "Senior Platform Engineer",
@@ -70,7 +70,7 @@
       "years": "2024 - 2024",
       "location": "Brazil",
       "work_mode": "Remote",
-      "details": "Redesigned technology-agnostic GitHub Actions workflows, standardized GitHub permissions, built Lambda layers and Serverless Framework plugins, and strengthened the internal platform with Prometheus, Grafana, Terraform, Helm and Kubernetes. Delivered reusable multi-language CI/CD workflows and an observability layer based on the AWS Lambda Telemetry API."
+      "details": "Conta Simples is a Brazilian fintech that serves 30K+ active businesses with 500K+ corporate cards issued. Redesigned technology-agnostic GitHub Actions workflows, standardized GitHub permissions, built Lambda layers and Serverless Framework plugins, and strengthened the internal platform with Prometheus, Grafana, Terraform, Helm and Kubernetes. Delivered reusable multi-language CI/CD workflows and an observability layer based on the AWS Lambda Telemetry API."
     },
     {
       "title": "Platform Engineer",
@@ -97,7 +97,7 @@
       "years": "2020 - 2021",
       "location": "Brazil",
       "work_mode": "Remote",
-      "details": "Developed microservices with Node.js, TypeScript, MariaDB and Strapi, created and maintained Kubernetes resources, configured Nginx reverse proxy, and contributed to frontend work with Nuxt.js. Also implemented backend features in a serverless architecture running on Kubernetes with Kubeless and Docker."
+      "details": "Bonaparte is an innovation agency based in Porto Alegre that combines collaboration, creativity and technology to drive digital transformation since 2011. Developed microservices with Node.js, TypeScript, MariaDB and Strapi, created and maintained Kubernetes resources, configured Nginx reverse proxy, and contributed to frontend work with Nuxt.js. Also implemented backend features in a serverless architecture running on Kubernetes with Kubeless and Docker."
     }
   ],
   "education": [
@@ -126,6 +126,11 @@
       "title": "Realtime Q&A",
       "description": "A live questions and answers platform for real-time interactive Q&A sessions.",
       "link": "https://questions.prandogabriel.dev/"
+    },
+    {
+      "title": "Longbourn",
+      "description": "A personal digital library manager to organize book collections, track reading progress and discover new reads.",
+      "link": "https://longbourn.club/"
     }
   ],
   "talks": [
